@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: potential_pitfalls_mabs_spatial_reuse.aux
+The style file: unsrt.bst
+Database file #1: references.bib
+Warning--entry type for "tgax2017draft" isn't style-file defined
+--line 155 of file references.bib
+Repeated entry---line 247 of file references.bib
+ : @inproceedings{auer1995gambling
+ :                                ,
+I'm skipping whatever remains of this entry
+Too many commas in name 3 of "Wilhelmi, Francesc and Bellalta, Boris and Cano, Cristina, Jonsson, Anders, Neu, Gergely and Barrachina, Sergio" for entry wilhelmi2017collaborative
+while executing---line 944 of file unsrt.bst
+Too many commas in name 3 of "Wilhelmi, Francesc and Bellalta, Boris and Cano, Cristina, Jonsson, Anders, Neu, Gergely and Barrachina, Sergio" for entry wilhelmi2017collaborative
+while executing---line 944 of file unsrt.bst
+Too many commas in name 3 of "Wilhelmi, Francesc and Bellalta, Boris and Cano, Cristina, Jonsson, Anders, Neu, Gergely and Barrachina, Sergio" for entry wilhelmi2017collaborative
+while executing---line 944 of file unsrt.bst
+Warning--empty author in ieee2015qam
+You've used 26 entries,
+            1791 wiz_defined-function locations,
+            595 strings with 8354 characters,
+and the built_in function-call counts, 7303 in all, are:
+= -- 726
+> -- 235
+< -- 11
++ -- 90
+- -- 64
+* -- 455
+:= -- 1032
+add.period$ -- 83
+call.type$ -- 26
+change.case$ -- 26
+chr.to.int$ -- 0
+cite$ -- 27
+duplicate$ -- 349
+empty$ -- 734
+format.name$ -- 64
+if$ -- 1715
+int.to.chr$ -- 0
+int.to.str$ -- 26
+missing$ -- 24
+newline$ -- 130
+num.names$ -- 24
+pop$ -- 95
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 207
+stack$ -- 0
+substring$ -- 623
+swap$ -- 131
+text.length$ -- 11
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 79
+width$ -- 28
+write$ -- 286
+(There were 4 error messages)
