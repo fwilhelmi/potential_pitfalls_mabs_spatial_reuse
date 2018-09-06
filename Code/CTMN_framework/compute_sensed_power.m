@@ -46,7 +46,7 @@ function [ Power_AP_PSI_cell, Power_STA_PSI_cell, SINR_cell ] = compute_sensed_p
              display_with_flag(['   * ' num2str(round(psi_ix*100/num_global_states)) ' %'], flag_general_logs)
         end
         
-        for wlan_ix = 1 : num_wlans
+        for wlan_ix = 1 : num_wlans            
             
             n_channels_used_for_tx = sum(PSI_cell{psi_ix}(wlan_ix,:)); % For each channel used during tx, use -3 dBm of power        
             %n_channels_used_for_tx = 1;
@@ -59,7 +59,7 @@ function [ Power_AP_PSI_cell, Power_STA_PSI_cell, SINR_cell ] = compute_sensed_p
                 for w_aux = 1 : num_wlans
                     
                     if wlan_ix ~= w_aux                        
-                                                
+                        
                         if PSI_cell{psi_ix}(w_aux,c) % If wlan_aux transmitting in state s
                             
                             distance_w_ap = distance_ap_ap(wlan_ix, w_aux);

@@ -97,6 +97,22 @@ function [throughput, powerRxStationFromAp, powerRxApFromAp, SINR_cell] = functi
     [ Power_AP_PSI_cell, Power_STA_PSI_cell, SINR_cell] = compute_sensed_power(wlans, num_global_states, PSI_cell, path_loss_model, ...
         carrier_frequency, flag_general_logs, powerRxStationFromAp, distance_ap_ap, distance_ap_sta, nChannels);
     display_with_flag([LOG_LVL2 'Sensed power computed!'], flag_general_logs)    
+%     disp('Power_AP_PSI_cell')
+%     Power_AP_PSI_cell{1}
+%     Power_AP_PSI_cell{2}
+%     Power_AP_PSI_cell{3}
+%     Power_AP_PSI_cell{4}
+%     disp('Power_STA_PSI_cell')
+%     Power_STA_PSI_cell{1}
+%     Power_STA_PSI_cell{2}
+%     Power_STA_PSI_cell{3}
+%     Power_STA_PSI_cell{4}
+%     
+%     disp('SINR_cell')
+%     SINR_cell{1}
+%     SINR_cell{2}
+%     SINR_cell{3}
+%     SINR_cell{4}
     
     %% FEASIBLE STATES SPACE (S)
     % Identify feasible states space (S) according to spatial and spectrum requirements.
@@ -141,6 +157,7 @@ function [throughput, powerRxStationFromAp, powerRxApFromAp, SINR_cell] = functi
         PSI_cell, SINR_cell, mcs_per_wlan, powerRxStationFromAp);        
     proportional_fairness = sum(log(throughput));
     display_with_flag([LOG_LVL2 'Trhoughput computed!'], flag_general_logs)
+        
      
     %% Save results
     if flag_save_results    

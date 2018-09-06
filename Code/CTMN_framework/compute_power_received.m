@@ -62,7 +62,7 @@ function [ power_rx ] = compute_power_received(distance, power_tx, G_tx, G_rx, f
 
             loss = 40.05 + 20*log10(f/2.4) + 20 * log10(min(distance,5)) + ...
                    breakpoint_loss + 18.3*(distance/n_floors)^(((distance/n_floors)+2)/...
-                   ((distance/n_floors)+1) - 0.46) + 5*(distance/n_walls);       
+                   ((distance/n_floors)+1) - 0.46) + 5*(distance/n_walls);   
                                                   
         otherwise
              error('Unknwown path loss model!')

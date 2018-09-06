@@ -76,10 +76,10 @@ function wlans = generate_wlan_from_file(filename, draw_map, ...
     end
   
     % COMPUTE THE UPPER BOUND THROUGHPUT PER WLAN
-    upper_bound_tpt = compute_throughput_isolation(wlans);    
-    for w = 1 : num_wlans
-        wlans(w).upper_bound = upper_bound_tpt(w);
-    end
+%     upper_bound_tpt = compute_throughput_isolation(wlans);    
+%     for w = 1 : num_wlans
+%         wlans(w).upper_bound = upper_bound_tpt(w);
+%     end
 
     if draw_map, draw_network_3D(wlans); end
 
