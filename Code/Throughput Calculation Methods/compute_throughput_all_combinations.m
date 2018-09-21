@@ -1,22 +1,21 @@
-%%% ***********************************************************************
-%%% * Selfish vs Oblivious MABs to Enhance Spatial Reuse in Dense WLANs   *
-%%% * Submission to                                                       *
-%%% * Authors:                                                            *
-%%% *   - Francesc Wilhelmi (francisco.wilhelmi@upf.edu)                  *
-%%% *   - Sergio Barrachina-Muñoz  (sergio.barrachina@upf.edu)            *
-%%% *   - Boris Bellalta (boris.bellalta@upf.edu)                         *
-%%% *   - Cristina Cano (ccanobs@uoc.edu)                                 *
-%%% * 	- Anders Jonsson (anders.jonsson@upf.edu)                         *
-%%% *   - Gergely Neu (gergely.neu@upf.edu)                               *
-%%% * Copyright (C) 2017-2022, and GNU GPLd, by Francesc Wilhelmi         *
-%%% * Repository:                                                         *
-%%% *  bitbucket.org/wireless_networks/selfish_vs_oblivious_spatial_reuse *
-%%% ***********************************************************************
+% ***********************************************************************
+% *         Potential and Pitfalls of Multi-Armed Bandits for           *
+% *               Decentralized Spatial Reuse in WLANs                  *
+% *                                                                     *
+% * Submission to Journal on Network and Computer Applications          *
+% * Authors:                                                            *
+% *   - Francesc Wilhelmi (francisco.wilhelmi@upf.edu)                  *
+% *   - Sergio Barrachina-Muñoz  (sergio.barrachina@upf.edu)            *
+% *   - Boris Bellalta (boris.bellalta@upf.edu)                         *
+% *   - Cristina Cano (ccanobs@uoc.edu)                                 *
+% *   - Anders Jonsson (anders.jonsson@upf.edu)                         *
+% *   - Gergely Neu (gergely.neu@upf.edu)                               *
+% * Copyright (C) 2017-2022, and GNU GPLd, by Francesc Wilhelmi         *
+% * Repository:                                                         *
+% *  https://github.com/fwilhelmi/potential_pitfalls_mabs_spatial_reuse *
+% ***********************************************************************
 
-% EXPERIMENT EXPLANATION:
-%
-
-function [ throughput_per_configuration ] = compute_throughput_all_combinations( wlans, nameWorkspace )
+function [ throughput_per_configuration ] = compute_throughput_all_combinations( wlans_aux, nameWorkspace )
 % Computes the throughput experienced by each WLAN for all the possible
 % combinations of Channels, CCA and TPC 
 %
@@ -34,21 +33,21 @@ function [ throughput_per_configuration ] = compute_throughput_all_combinations(
     % Load system & TS configuration
     load('configuration_system.mat')
     load('configuration_agents.mat')
-
+    
     disp([LOG_LVL2 'Computing the throughput for all the combinations...'])
     disp([LOG_LVL3 'Channel actions: ' num2str(channelActions)])
     disp([LOG_LVL3 'CCA actions: ' num2str(ccaActions)])
     disp([LOG_LVL3 'Tx power actions: ' num2str(txPowerActions)])
 
     % Generate a copy of the WLAN object to make modifications
-    wlansAux = wlans;    
+    wlansAux = wlans_aux;    
     nWlans = size(wlansAux, 2);  
         
     log_k = round(size(possibleComb, 1)/10);
     throughput_per_configuration = zeros(size(possibleComb, 1), nWlans);
     
     % Try all the combinations
-    for i = 1:size(possibleComb, 1)
+    for i = 1 : size(possibleComb, 1)
         
         if mod(i, log_k) == 0
              disp([LOG_LVL4 'Progress: ' num2str(round(i*100/size(possibleComb, 1))) ' %'])

@@ -1,20 +1,21 @@
-%%% ***********************************************************************
-%%% * Potential and Pitfalls of Multi-Armed Bandits for                   *
-%%% *              Decentralized Spatial Reuse in WLANs                   *
-%%% * Submission to Network and Computer Applications (Elsevier)          *
-%%% * Authors:                                                            *
-%%% *   - Francesc Wilhelmi (francisco.wilhelmi@upf.edu)                  *
-%%% *   - Sergio Barrachina-Muñoz  (sergio.barrachina@upf.edu)            *
-%%% *   - Boris Bellalta (boris.bellalta@upf.edu)                         *
-%%% *   - Cristina Cano (ccanobs@uoc.edu)                                 *
-%%% * 	- Anders Jonsson (anders.jonsson@upf.edu)                         *
-%%% *   - Gergely Neu (gergely.neu@upf.edu)                               *
-%%% * Copyright (C) 2017-2022, and GNU GPLd, by Francesc Wilhelmi         *
-%%% * Repository:                                                         *
-%%% *  bitbucket.org/wireless_networks/selfish_vs_oblivious_spatial_reuse *
-%%% ***********************************************************************
+% ***********************************************************************
+% *         Potential and Pitfalls of Multi-Armed Bandits for           *
+% *               Decentralized Spatial Reuse in WLANs                  *
+% *                                                                     *
+% * Submission to Journal on Network and Computer Applications          *
+% * Authors:                                                            *
+% *   - Francesc Wilhelmi (francisco.wilhelmi@upf.edu)                  *
+% *   - Sergio Barrachina-Muñoz  (sergio.barrachina@upf.edu)            *
+% *   - Boris Bellalta (boris.bellalta@upf.edu)                         *
+% *   - Cristina Cano (ccanobs@uoc.edu)                                 *
+% *   - Anders Jonsson (anders.jonsson@upf.edu)                         *
+% *   - Gergely Neu (gergely.neu@upf.edu)                               *
+% * Copyright (C) 2017-2022, and GNU GPLd, by Francesc Wilhelmi         *
+% * Repository:                                                         *
+% *  https://github.com/fwilhelmi/potential_pitfalls_mabs_spatial_reuse *
+% ***********************************************************************
 
-function [ optimal_tpt_per_wlan, optimal_actions_ix ] = compute_optimal_throughput( wlans, optimalType, nameWorkspace )
+function [ optimal_tpt_per_wlan, optimal_actions_ix ] = compute_optimal_throughput( wlans_aux, optimalType, nameWorkspace )
 % Computes the optimal throughput for each WLAN according to the reward type
 %
 % OUTPUT:
@@ -26,9 +27,9 @@ function [ optimal_tpt_per_wlan, optimal_actions_ix ] = compute_optimal_throughp
     load('constants_thompson_sampling.mat')
     load('configuration_agents.mat')
 
-    throughput_per_configuration = compute_throughput_all_combinations(wlans, nameWorkspace);
-    
-    nWlans = size(wlans, 2);
+    throughput_per_configuration = compute_throughput_all_combinations(wlans_aux, nameWorkspace);
+        
+    nWlans = size(wlans_aux, 2);
     
     switch optimalType
 

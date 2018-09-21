@@ -1,21 +1,8 @@
-%%% ***********************************************************************
-%%% * Selfish vs Oblivious MABs to Enhance Spatial Reuse in Dense WLANs   *
-%%% * Submission to                                                       *
-%%% * Authors:                                                            *
-%%% *   - Francesc Wilhelmi (francisco.wilhelmi@upf.edu)                  *
-%%% *   - Sergio Barrachina-Muñoz  (sergio.barrachina@upf.edu)            *
-%%% *   - Boris Bellalta (boris.bellalta@upf.edu)                         *
-%%% *   - Cristina Cano (ccanobs@uoc.edu)                                 *
-%%% * 	- Anders Jonsson (anders.jonsson@upf.edu)                         *
-%%% *   - Gergely Neu (gergely.neu@upf.edu)                               *
-%%% * Copyright (C) 2017-2022, and GNU GPLd, by Francesc Wilhelmi         *
-%%% * Repository:                                                         *
-%%% *  bitbucket.org/wireless_networks/selfish_vs_oblivious_spatial_reuse *
-%%% ***********************************************************************
+% FILE DESCRIPTION:
+% Script for generating the agents configuration in simulation 1.3.2
 
 % LEARNING ITERATIONS AND REPETITIONS
-
-totalIterations = 10000;             % Maximum convergence time (one period implies the participation of all WLANs)
+totalIterations = 1000;           % Maximum convergence time (one period implies the participation of all WLANs)
 minimumIterationToConsider = 1;   % Iteration from which to consider the obtained results
 
 % ACTIONS
@@ -30,19 +17,19 @@ possibleComb = allcomb(possibleActions, possibleActions, possibleActions);
 randomInitialConfiguration = false;    % Variable for assigning random channel/tx_power/cca at the beginning
 
 % DISPLAY AND PLOT OPTIONS
-plotResultsThompsonSampling = true;    % To plot or not the results at the end of the simulation
+plotResultsThompsonSampling = true;   % To plot or not the results at the end of the simulation
 printResultsThompsonSampling = true;  % To print info after Bandits implementation (1) or not (0)
-saveConsoleLogs = false;               % To save logs into a file or not
-displayLogsTS = false;                  % Variable to display logs during the TS execution
-drawMap = false;                       % Variable for drawing the map when generating it through "generate_wlan_from_file" or "generate_wlan_randomly"
+saveConsoleLogs = false;              % To save logs into a file or not
+displayLogsTS = false;                % Variable to display logs during the TS execution
+drawMap = false;                      % Variable for drawing the map when generating it through "generate_wlan_from_file" or "generate_wlan_randomly"
 displayProgressBar = true;
 
 % Variables for CASE_CONVERGENCE_TYPE_1
 convergenceActivated = false;
 numMaxIterationsConvergence = 10;    % Number of needed iterations without changes to assess convergence        
-allowedError = 0.05;                % Maximum allowed error between measurements
+allowedError = 0.05;                 % Maximum allowed error between measurements
 % Variables for CASE_CONVERGENCE_TYPE_2
-epsilonRegret = 0.1;                % Maximum allowed variability for the average cumulative regret (R_T/T) 
+epsilonRegret = 0.1;                 % Maximum allowed variability for the average cumulative regret (R_T/T) 
 
 probabilityOfActing = 1;
 clusteringActivated = true;

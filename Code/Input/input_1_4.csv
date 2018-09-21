@@ -1,0 +1,4 @@
+% code, primary, left ch, right ch, tx_power, cca, lambda, x_ap, y_ap, z_ap, x_sta, y_sta, z_sta, legacy_node, cw, activation
+1,      1,      1,      1,     20,      -68,      14815,     0,    0,      0,    0,     0,    2,   0,   16, 0
+2,      1,      1,      1,     20,      -68,      14815,     4,    0,      0,    4,     0,    4,   0,   16, 5
+3,      1,      1,      1,     20,      -68,      14815,     8,    0,      0,    8,     0,    2,   0,   16, 0

@@ -1,19 +1,30 @@
-%%% ***********************************************************************
-%%% * Selfish vs Oblivious MABs to Enhance Spatial Reuse in Dense WLANs   *
-%%% * Submission to                                                       *
-%%% * Authors:                                                            *
-%%% *   - Francesc Wilhelmi (francisco.wilhelmi@upf.edu)                  *
-%%% *   - Sergio Barrachina-Muñoz  (sergio.barrachina@upf.edu)            *
-%%% *   - Boris Bellalta (boris.bellalta@upf.edu)                         *
-%%% *   - Cristina Cano (ccanobs@uoc.edu)                                 *
-%%% * 	- Anders Jonsson (anders.jonsson@upf.edu)                         *
-%%% *   - Gergely Neu (gergely.neu@upf.edu)                               *
-%%% * Copyright (C) 2017-2022, and GNU GPLd, by Francesc Wilhelmi         *
-%%% * Repository:                                                         *
-%%% *  bitbucket.org/wireless_networks/selfish_vs_oblivious_spatial_reuse *
-%%% ***********************************************************************
-clear
+% FILE DESCRIPTION:
+% Script to generate the results of simulation 0.2 (CSMA/CA Analysis)
+% This script partially fills Table 1 in Section 3.3
+
 clc
+clear all
+
+disp('***********************************************************************')
+disp('*         Potential and Pitfalls of Multi-Armed Bandits for           *')
+disp('*               Decentralized Spatial Reuse in WLANs                  *')
+disp('*                                                                     *')
+disp('* Submission to Journal on Network and Computer Applications          *')
+disp('* Authors:                                                            *')
+disp('*   - Francesc Wilhelmi (francisco.wilhelmi@upf.edu)                  *')
+disp('*   - Sergio Barrachina-Muñoz  (sergio.barrachina@upf.edu)            *')
+disp('*   - Boris Bellalta (boris.bellalta@upf.edu)                         *')
+disp('*   - Cristina Cano (ccanobs@uoc.edu)                                 *')
+disp('*   - Anders Jonsson (anders.jonsson@upf.edu)                         *')
+disp('*   - Gergely Neu (gergely.neu@upf.edu)                               *')
+disp('* Copyright (C) 2017-2022, and GNU GPLd, by Francesc Wilhelmi         *')
+disp('* Repository:                                                         *')
+disp('*  https://github.com/fwilhelmi/potential_pitfalls_mabs_spatial_reuse *')
+disp('***********************************************************************')
+
+disp('----------------------------------------------')
+disp('GENERATE RESULTS OF SIMULATION 0.2')
+disp('----------------------------------------------')
 
 % Generate constants 
 constants_sfctmn_framework

@@ -1,3 +1,0 @@
-% code; primary; left ch; right ch; tx_power; cca; lambda; x_ap; y_ap; z_ap; x_sta; y_sta; z_sta; legacy_node; cw;bss_color;srg;obss_pd;obss_pd_min;obss_pd_max;srg_obss_pd;non_srg_obss_pd;tx_pwr_ref
-1;1;1;1;20;-62;14815;0;0;0;0;4;0;0;512;0;0;-62;-82;-62;-62;-62;21
-2;1;1;1;20;-82;14815;6;0;0;6;4;0;0;512;0;0;-62;-82;-62;-62;-62;21

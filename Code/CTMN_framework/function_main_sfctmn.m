@@ -45,22 +45,32 @@ function [throughput, powerRxStationFromAp, powerRxApFromAp, SINR_cell] = functi
     
     % Determine the number of WLANs
     num_wlans = size(wlans, 2);
+    wlans_aux = wlans;
+%     if flag_activation
+%         num_wlans_initial = num_wlans;   
+%         for i = 1 : num_wlans
+%             if ~wlans(i).activated && wlans(i).activation_iteration > 0
+%                 wlans_aux(i) = [];
+%                 num_wlans = num_wlans - 1;
+%             end
+%         end
+%     end
     
     % Check input correctness
     if flag_input_checker
         display_with_flag([LOG_LVL3 'Checking input configuration...'], flag_general_logs)
-        check_input_config(wlans);
+        check_input_config(wlans_aux);
         display_with_flag([LOG_LVL4 'WLANs input file processed successfully!'], flag_general_logs)
     end
 
-    [distance_ap_ap, distance_ap_sta] = compute_distance_nodes(wlans);
+    [distance_ap_ap, distance_ap_sta] = compute_distance_nodes(wlans_aux);
    
     for i = 1 : num_wlans
         for j = 1 : num_wlans
             % Compute the power received in each STA and AP from each AP
-            powerRxStationFromAp(i,j) = compute_power_received(distance_ap_sta(j,i), wlans(j).tx_power, ...
+            powerRxStationFromAp(i,j) = compute_power_received(distance_ap_sta(j,i), wlans_aux(j).tx_power, ...
                 GAIN_TX_DEFAULT, GAIN_RX_DEFAULT, carrier_frequency, path_loss_model);    
-            powerRxApFromAp(i,j) = compute_power_received(distance_ap_ap(i,j), wlans(j).tx_power, ...
+            powerRxApFromAp(i,j) = compute_power_received(distance_ap_ap(i,j), wlans_aux(j).tx_power, ...
                 GAIN_TX_DEFAULT, GAIN_RX_DEFAULT, carrier_frequency, path_loss_model);     
         end
     end
@@ -71,7 +81,7 @@ function [throughput, powerRxStationFromAp, powerRxApFromAp, SINR_cell] = functi
     % SINR sensed in the STA in isolation (just considering ambient noise)
     %  - NOT USED
     sinr_isolation = compute_sinr(powerRxStationFromAp, 0, NOISE_DBM);    
-    display_wlans(wlans, flag_display_wlans, flag_plot_wlans, flag_plot_ch_allocation, nChannels,...
+    display_wlans(wlans_aux, flag_display_wlans, flag_plot_wlans, flag_plot_ch_allocation, nChannels,...
         path_loss_model, carrier_frequency, sinr_isolation)
 
     % Display system configuration
@@ -87,14 +97,14 @@ function [throughput, powerRxStationFromAp, powerRxApFromAp, SINR_cell] = functi
 
     display_with_flag(' ', flag_general_logs)
     display_with_flag([LOG_LVL1 'Identifying global state space (PSI)...'], flag_general_logs)
-    [PSI_cell, num_global_states, PSI] = identify_global_states(wlans, nChannels, num_wlans, access_protocol_type);
+    [PSI_cell, num_global_states, PSI] = identify_global_states(wlans_aux, nChannels, num_wlans, access_protocol_type);
     display_with_flag([LOG_LVL2 'Global states identified! There are ' num2str(num_global_states) ' global states.'], flag_general_logs)
     
     %% SENSED POWER
     % Compute the power perceived by each WLAN in every channel in every global state [dBm]
     display_with_flag(' ', flag_general_logs)
     display_with_flag([LOG_LVL1 'Computing interference sensed power by the STAs in every state (Power_PSI). It may take some minutes :) ...'], flag_general_logs)
-    [ Power_AP_PSI_cell, Power_STA_PSI_cell, SINR_cell] = compute_sensed_power(wlans, num_global_states, PSI_cell, path_loss_model, ...
+    [ Power_AP_PSI_cell, Power_STA_PSI_cell, SINR_cell] = compute_sensed_power(wlans_aux, num_global_states, PSI_cell, path_loss_model, ...
         carrier_frequency, flag_general_logs, powerRxStationFromAp, distance_ap_ap, distance_ap_sta, nChannels);
     display_with_flag([LOG_LVL2 'Sensed power computed!'], flag_general_logs)    
 %     disp('Power_AP_PSI_cell')
@@ -120,7 +130,7 @@ function [throughput, powerRxStationFromAp, powerRxApFromAp, SINR_cell] = functi
     display_with_flag([LOG_LVL1 'Identifying feasible state space (S) and transition rate matrix (Q)...'], flag_general_logs)
     [ Q, S, S_cell, Q_logical_S, Q_logical_PSI, S_num_states ] = ...
         identify_feasible_states_and_Q(PSI_cell, Power_AP_PSI_cell, nChannels, ...
-        wlans, dsa_policy_type, mcs_per_wlan, flag_logs_feasible_space);
+        wlans_aux, dsa_policy_type, mcs_per_wlan, flag_logs_feasible_space);
     display_with_flag([LOG_LVL2 'Feasible state space (S) identified! There are ' num2str(S_num_states) ' feasible states.'], flag_general_logs)
     
     %% MARKOV CHAIN
@@ -153,8 +163,24 @@ function [throughput, powerRxStationFromAp, powerRxApFromAp, SINR_cell] = functi
     display_with_flag([LOG_LVL1 'Computing throughput...'], flag_general_logs)
 
     % get_throughput now per states
-    throughput = get_throughput(wlans, num_wlans, p_equilibrium, S_cell, ...
-        PSI_cell, SINR_cell, mcs_per_wlan, powerRxStationFromAp);        
+    throughput = get_throughput(wlans_aux, num_wlans, p_equilibrium, S_cell, ...
+        PSI_cell, SINR_cell, mcs_per_wlan, powerRxStationFromAp); 
+%     throughput_wlans_aux = get_throughput(wlans_aux, num_wlans, p_equilibrium, S_cell, ...
+%         PSI_cell, SINR_cell, mcs_per_wlan, powerRxStationFromAp); 
+%     if flag_activation
+%         throughput = zeros(1, num_wlans_initial);
+%         k = 1;
+%         for i = 1 : num_wlans_initial
+%             if ~wlans_aux(i).activated        
+%                 throughput(i) = 0;
+%             else
+%                 throughput(i) = throughput_wlans_aux(k);
+%                 k = k + 1;
+%             end
+%         end
+%     else
+%         throughput = throughput_wlans_aux;
+%     end
     proportional_fairness = sum(log(throughput));
     display_with_flag([LOG_LVL2 'Trhoughput computed!'], flag_general_logs)
         

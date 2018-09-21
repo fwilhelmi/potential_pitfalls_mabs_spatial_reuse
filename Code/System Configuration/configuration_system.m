@@ -1,12 +1,5 @@
-%%% *********************************************************************
-%%% * Spatial-Flexible CTMN for WLANs                                   *
-%%% * Author: Sergio Barrachina-Munoz (sergio.barrachina@upf.edu)       *
-%%% * Copyright (C) 2017-2022, and GNU GPLd, by Sergio Barrachina-Munoz *
-%%% * GitHub repository: https://github.com/sergiobarra/SFCTMN          *
-%%% * More info on https://www.upf.edu/en/web/sergiobarrachina          *
-%%% *********************************************************************
-
-%%% File description: script for generating the system configuration
+% FILE DESCRIPTION:
+% Script for generating the default system configuration
 
 path_loss_model = PATH_LOSS_AX_RESIDENTIAL;         % Path loss model index
 access_protocol_type = ACCESS_PROTOCOL_IEEE80211;   % Access protocol type

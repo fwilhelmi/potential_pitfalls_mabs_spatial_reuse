@@ -1,20 +1,22 @@
-%%% ***********************************************************************
-%%% * Selfish vs Oblivious MABs to Enhance Spatial Reuse in Dense WLANs   *
-%%% * Submission to                                                       *
-%%% * Authors:                                                            *
-%%% *   - Francesc Wilhelmi (francisco.wilhelmi@upf.edu)                  *
-%%% *   - Sergio Barrachina-Muñoz  (sergio.barrachina@upf.edu)            *
-%%% *   - Boris Bellalta (boris.bellalta@upf.edu)                         *
-%%% *   - Cristina Cano (ccanobs@uoc.edu)                                 *
-%%% * 	- Anders Jonsson (anders.jonsson@upf.edu)                         *
-%%% *   - Gergely Neu (gergely.neu@upf.edu)                               *
-%%% * Copyright (C) 2017-2022, and GNU GPLd, by Francesc Wilhelmi         *
-%%% * Repository:                                                         *
-%%% *  bitbucket.org/wireless_networks/selfish_vs_oblivious_spatial_reuse *
-%%% ***********************************************************************
+% ***********************************************************************
+% *         Potential and Pitfalls of Multi-Armed Bandits for           *
+% *               Decentralized Spatial Reuse in WLANs                  *
+% *                                                                     *
+% * Submission to Journal on Network and Computer Applications          *
+% * Authors:                                                            *
+% *   - Francesc Wilhelmi (francisco.wilhelmi@upf.edu)                  *
+% *   - Sergio Barrachina-Muñoz  (sergio.barrachina@upf.edu)            *
+% *   - Boris Bellalta (boris.bellalta@upf.edu)                         *
+% *   - Cristina Cano (ccanobs@uoc.edu)                                 *
+% *   - Anders Jonsson (anders.jonsson@upf.edu)                         *
+% *   - Gergely Neu (gergely.neu@upf.edu)                               *
+% * Copyright (C) 2017-2022, and GNU GPLd, by Francesc Wilhelmi         *
+% * Repository:                                                         *
+% *  https://github.com/fwilhelmi/potential_pitfalls_mabs_spatial_reuse *
+% ***********************************************************************
 
 function [] = plot_mabs_performance( wlans, tptEvolutionPerWlan, timesActionHasBeenPlayed, ...
-    totalExperiencedRegret, rewardEvolutionPerWlan, rewardType, method_name )
+    totalExperiencedRegret, rewardEvolutionPerWlan, rewardType, totalIterations, method_name )
 
     load('constants_sfctmn_framework.mat')
     load('configuration_agents.mat')
@@ -42,18 +44,18 @@ function [] = plot_mabs_performance( wlans, tptEvolutionPerWlan, timesActionHasB
     disp('-----------------------------------')
 
     %% TEMPORAL THROUGHPUT
-    plot_temporal_throughput( wlans, tptEvolutionPerWlan, method_name );
+    plot_temporal_throughput( wlans, tptEvolutionPerWlan, totalIterations, method_name );
     
     %% AVERAGE THROUGHPUT PER WLAN
-    plot_average_throughput_per_wlan(wlans, tptEvolutionPerWlan, rewardType, method_name);
+    plot_average_throughput_per_wlan(wlans, tptEvolutionPerWlan, rewardType, totalIterations, method_name);
     
     %% Actions probability
-    plot_actions_probabilities( tptEvolutionPerWlan, timesActionHasBeenPlayed{totalIterations}, method_name );
+    %plot_actions_probabilities( tptEvolutionPerWlan, timesActionHasBeenPlayed{totalIterations}, method_name );
     
     %% Regret 
-    plot_temporal_regret( totalExperiencedRegret, method_name );    
+    %plot_temporal_regret( totalExperiencedRegret, method_name );    
         
     %% Reward     
-    plot_temporal_reward( tptEvolutionPerWlan, rewardEvolutionPerWlan, method_name );
+    %plot_temporal_reward( tptEvolutionPerWlan, rewardEvolutionPerWlan, method_name );
     
 end

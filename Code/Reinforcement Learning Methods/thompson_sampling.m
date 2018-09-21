@@ -1,15 +1,22 @@
-%%% ************************************************************************
-%%% * Collaborative Spatial Reuse in Wireless Networks via Selfish MABs    *
-%%% * Author: Francesc Wilhelmi (francesc.wilhelmi@upf.edu)                *
-%%% * Co-authors: C. Cano, G. Neu, B. Bellalta, A. Jonsson & S. Barrachina *
-%%% * Copyright (C) 2017-2022, and GNU GPLd, by Francesc Wilhelmi          *
-%%% * GitHub repository:                                                   *
-%%% *   https://github.com/wn-upf/Collaborative_SR_in_WNs_via_Selfish_MABs *
-%%% * More info on https://www.upf.edu/en/web/fwilhelmi                    *
-%%% ************************************************************************
+% ***********************************************************************
+% *         Potential and Pitfalls of Multi-Armed Bandits for           *
+% *               Decentralized Spatial Reuse in WLANs                  *
+% *                                                                     *
+% * Submission to Journal on Network and Computer Applications          *
+% * Authors:                                                            *
+% *   - Francesc Wilhelmi (francisco.wilhelmi@upf.edu)                  *
+% *   - Sergio Barrachina-Muñoz  (sergio.barrachina@upf.edu)            *
+% *   - Boris Bellalta (boris.bellalta@upf.edu)                         *
+% *   - Cristina Cano (ccanobs@uoc.edu)                                 *
+% *   - Anders Jonsson (anders.jonsson@upf.edu)                         *
+% *   - Gergely Neu (gergely.neu@upf.edu)                               *
+% * Copyright (C) 2017-2022, and GNU GPLd, by Francesc Wilhelmi         *
+% * Repository:                                                         *
+% *  https://github.com/fwilhelmi/potential_pitfalls_mabs_spatial_reuse *
+% ***********************************************************************
 
 function [ tpt_experienced_per_wlan, cellTimesArmHasBeenPlayed, cellEstimatedReward, cellExperiencedRegret, rewardEvolution, convergenceTime] ...
-    = thompson_sampling( wlans_input, rewardType, sharedRewardType, convergenceActivated, convergenceType, alpha, varargin )
+    = thompson_sampling( wlans_input, partialIterations, totalIterations, rewardType, sharedRewardType, convergenceActivated, convergenceType, alpha, varargin )
 % thompson_sampling - Given a WLAN, applies Thompson sampling to maximize the experienced throughput
 %
 %   OUTPUT: 
@@ -43,17 +50,15 @@ function [ tpt_experienced_per_wlan, cellTimesArmHasBeenPlayed, cellEstimatedRew
     display_with_flag([LOG_LVL3 'rewardType = ' num2str(rewardType)], displayLogsTS)
     display_with_flag([LOG_LVL4 'sharedRewardType = ' num2str(sharedRewardType)], displayLogsTS)
     display_with_flag([LOG_LVL3 'convergenceActivated = ' num2str(convergenceActivated)], displayLogsTS)
-    display_with_flag([LOG_LVL4 'convergenceType = ' num2str(convergenceType)], displayLogsTS)
-    display_with_flag([LOG_LVL4 'alpha = ' num2str(alpha)], displayLogsTS)
     
     text = 'Applying Thompson Sampling to the introduced WLAN...';
     display_with_flag(text, displayLogsTS);
     
     % Check optional variables defining a new set of actions
     try
-        if size(varargin, 2) == 3
+        if size(varargin, 2) == 1
             disp('Error 1')
-        elseif size(varargin, 2) == 3
+        elseif size(varargin, 2) == 2
             disp('Error 2')
         elseif size(varargin, 2) == 3
             % Update possible actions
@@ -83,39 +88,41 @@ function [ tpt_experienced_per_wlan, cellTimesArmHasBeenPlayed, cellEstimatedRew
 %     possibleActions = new_actions_set(:)';    
 %     K = size(possibleActions,2);   % Total number of actions  
     
-    nWlans = size(wlans_input, 2);
-
+    num_wlans = size(wlans_input, 2);
+    wlans_aux = wlans_input;
+    
     % Determine the initial action and initialize variables
-    initialAction = zeros(1, nWlans);               % Initialize arm selection for each WLAN by using the initial action
-    timesArmHasBeenPlayed = zeros(nWlans, K);       % Initialize the times an arm has been played
-    transitionsCounter = zeros(nWlans, K^2);        % Initialize the transitions counter per WLAN
-    currentAction = zeros(1, nWlans);               % Initialize the current action selected per WLAN
-    upperBoundTpt = zeros(1, nWlans);               % Initialize the array containing the upper bound of each WLAN
-    estimatedRewardPerWlan = zeros(nWlans, K);      % Initialize the estimated reward per WLAN for each action
+    initialAction = zeros(1, num_wlans);               % Initialize arm selection for each WLAN by using the initial action
+    timesArmHasBeenPlayed = zeros(num_wlans, K);       % Initialize the times an arm has been played
+    transitionsCounter = zeros(num_wlans, K^2);        % Initialize the transitions counter per WLAN
+    currentAction = zeros(1, num_wlans);               % Initialize the current action selected per WLAN
+    upperBoundTpt = zeros(1, num_wlans);               % Initialize the array containing the upper bound of each WLAN
+    estimatedRewardPerWlan = zeros(num_wlans, K);      % Initialize the estimated reward per WLAN for each action
     
     % Find the index of the initial action taken by each WLAN    
-    for i = 1 : nWlans
-        [~,indexCca] = find(ccaActions==wlans_input(i).cca);
-        [~,indexTpc] = find(txPowerActions==wlans_input(i).tx_power);
-        initialAction(i) = indexes2val(wlans_input(i).primary, ...
+    for i = 1 : num_wlans
+        [~,indexCca] = find(ccaActions==wlans_aux(i).cca);
+        [~,indexTpc] = find(txPowerActions==wlans_aux(i).tx_power);
+        initialAction(i) = indexes2val(wlans_aux(i).primary, ...
             indexCca, indexTpc, size(channelActions,2), size(ccaActions,2));
-        upperBoundTpt(i) = wlans_input(i).upper_bound;
+        upperBoundTpt(i) = wlans_aux(i).upper_bound;
     end                  
     
     % Initialize the current selected arm to the initial action
     selectedArm = initialAction;
     % Initialize the previous action selected per WLAN
-    previousAction = selectedArm;                   
-    
+    previousAction = selectedArm;         
+       
     % Compute the throughput in each WLAN with CTMNs    
-    initialThroughput = function_main_sfctmn(wlans_input);
+    initialThroughput = function_main_sfctmn(wlans_aux);
 
     % Set the initial throughput experienced by each WLAN
     tpt_experienced_per_wlan(1, :) = initialThroughput;
 
     % Determine the reward experienced by each WLAN according to the throughput
-    [rewardPerWlan, regretPerWlan] = generate_reward(wlans_input, selectedArm, ...
+    [rewardPerWlan, regretPerWlan] = generate_reward(wlans_aux, selectedArm, ...
         initialThroughput, timesArmHasBeenPlayed, rewardType, sharedRewardType, alpha);  
+    
     % Compute the estimated reward according to the actual reward
     estimatedRewardPerWlan = compute_estimated_reward(rewardPerWlan, ...
         estimatedRewardPerWlan, timesArmHasBeenPlayed, selectedArm);
@@ -125,42 +132,41 @@ function [ tpt_experienced_per_wlan, cellTimesArmHasBeenPlayed, cellEstimatedRew
     % Variables to keep track of the estimated rewards in each WLAN
     cellEstimatedReward{1} = estimatedRewardPerWlan;
     cellExperiencedRegret{1} = regretPerWlan;
-    
     % Update the times an arm has been played after drawing the initial action
-    for i = 1 : nWlans, timesArmHasBeenPlayed(i, initialAction(i)) = 1; end
+    for i = 1 : num_wlans, timesArmHasBeenPlayed(i, initialAction(i)) = 1; end    
     cellTimesArmHasBeenPlayed{1} = timesArmHasBeenPlayed;
     
     % Initialize variables to determine convergence
     convergenceTime = totalIterations;          % Set the convergence time by default to the maximum 
     wlansThatConverged = [];                   % Initialization of the wlans that have converged
-    countConvergence = zeros(1, nWlans);     % Initialization of the counter to assess convergence in TS
+    countConvergence = zeros(1, num_wlans);     % Initialization of the counter to assess convergence in TS
     
     % Initialize variables to determine the probability of acting in each iteration    
-    counterIterationsWithoutActing = zeros(1, nWlans);	% Counter to assess the number of iterations that each WLAN has expended without acting
+    counterIterationsWithoutActing = zeros(1, num_wlans);	% Counter to assess the number of iterations that each WLAN has expended without acting
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %% ITERATE UNTIL CONVERGENCE OR MAXIMUM CONVERGENCE TIME 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
     % START THE ALGORITHM    
-    text = ['Running ' num2str(totalIterations) ' iterations of Thompson sampling...'];
+    text = ['Running ' num2str(partialIterations) ' iterations of Thompson sampling...'];
     display_with_flag(text, displayLogsTS);
     if displayProgressBar, h = waitbar(0,'Please wait...'); end
     
     % ITERATE UNTIL ENDING OR CONVERGENCE IS ACHIEVED    
     iteration = 2;  % iteration 1 is considered to be the initialization
-    while(iteration < totalIterations + 1)         
+    while(iteration < partialIterations + 1)         
         display_with_flag(['Iteration ' num2str(iteration)], displayLogsTS);
         % Check if all the WLANs converged
-        if convergenceActivated && size(wlansThatConverged, 2) == nWlans            
+        if convergenceActivated && size(wlansThatConverged, 2) == num_wlans            
             display_with_flag('ALL THE WLANS CONVERGED!', displayLogsTS);
             convergenceTime = iteration;
             % Fill remaining iterations with the last observed performance
-            for i = iteration : totalIterations
+            for i = iteration : partialIterations
                 % Use the last experienced throughput
                 tpt_experienced_per_wlan(i, :) = tpt_after_action;
                 % Update and store the reward and the estimate for statistics
-                [rewardPerWlan, regretPerWlan] = generate_reward(wlans_input, selectedArm, ...
+                [rewardPerWlan, regretPerWlan] = generate_reward(wlans_aux, selectedArm, ...
                     tpt_after_action, timesArmHasBeenPlayed, rewardType, sharedRewardType, alpha);                 
                 estimatedRewardPerWlan = compute_estimated_reward(rewardPerWlan, ...
                     estimatedRewardPerWlan, timesArmHasBeenPlayed, selectedArm);                
@@ -168,7 +174,7 @@ function [ tpt_experienced_per_wlan, cellTimesArmHasBeenPlayed, cellEstimatedRew
                 cellEstimatedReward{i} = estimatedRewardPerWlan;
                 cellExperiencedRegret{i} = regretPerWlan;
                 % Update the times an action has been played (the same until the algorithm ends)
-                for wlan_i = 1 : nWlans
+                for wlan_i = 1 : num_wlans
                     timesArmHasBeenPlayed(wlan_i, selectedArm(wlan_i)) = ...
                         timesArmHasBeenPlayed(wlan_i, selectedArm(wlan_i)) + 1;  
                 end
@@ -177,15 +183,18 @@ function [ tpt_experienced_per_wlan, cellTimesArmHasBeenPlayed, cellEstimatedRew
             break; % Finish Thompson sampling execution
         end
 
-        if displayProgressBar, waitbar(iteration / totalIterations); end
+        if displayProgressBar, waitbar(iteration / partialIterations); end
                 
-        previous_arm = selectedArm;
+        previousArm = selectedArm;        
+            
+        order = randperm(num_wlans);       % Assign turns to WLANs randomly 
         
-        order = randperm(nWlans);       % Assign turns to WLANs randomly   
         % Iterate sequentially for each agent in the random order 
-        for i = 1 : nWlans 
+        for i = 1 : num_wlans 
+            
             p = rand(1);
-            if wlans_input(order(i)).legacy || ...
+            
+            if wlans_aux(order(i)).legacy || ...
                 sum(wlansThatConverged == order(i)) > 0 || ...
                 p > probabilityOfActing
                 % DO NOTHING - LEGACY WLANs DO NOT MAKE ACTIONS
@@ -201,10 +210,10 @@ function [ tpt_experienced_per_wlan, cellTimesArmHasBeenPlayed, cellEstimatedRew
                 [a, b, c] = val2indexes(selectedArm(order(i)), ...
                     size(channelActions, 2), size(ccaActions, 2), size(txPowerActions, 2));
                 % Update WN configuration
-                wlans_input(order(i)).primary = a;  
-                wlans_input(order(i)).range = [a a]; 
-                wlans_input(order(i)).cca = ccaActions(b);
-                wlans_input(order(i)).tx_power = txPowerActions(c);   
+                wlans_aux(order(i)).primary = a;  
+                wlans_aux(order(i)).range = [a a]; 
+                wlans_aux(order(i)).cca = ccaActions(b);
+                wlans_aux(order(i)).tx_power = txPowerActions(c);   
                 % Find the index of the current and the previous action in allCombs
                 ix = find(allCombs(:, 1) == previousAction(order(i)) ...
                     & allCombs(:, 2) == currentAction(order(i)));
@@ -218,10 +227,10 @@ function [ tpt_experienced_per_wlan, cellTimesArmHasBeenPlayed, cellEstimatedRew
 %         disp('---------------')
 %         disp(['Iteration ' num2str(iteration)])
         % Compute the throughput in each WLAN with CTMNs
-        [tpt_after_action, power_rx_sta_from_ap, ~, ~] = function_main_sfctmn(wlans_input);        
-        ccaArray = zeros(1, nWlans);
-        for wlan_i = 1 : nWlans
-            ccaArray(wlan_i) = wlans_input(wlan_i).cca;
+        [tpt_after_action, power_rx_sta_from_ap, ~, ~] = function_main_sfctmn(wlans_aux);        
+        ccaArray = zeros(1, num_wlans);
+        for wlan_i = 1 : num_wlans
+            ccaArray(wlan_i) = wlans_aux(wlan_i).cca;
         end
         clusters = determine_clusters(power_rx_sta_from_ap,ccaArray);
        
@@ -232,30 +241,30 @@ function [ tpt_experienced_per_wlan, cellTimesArmHasBeenPlayed, cellEstimatedRew
         if clusteringActivated
             for ch = 1 : nChannels
                 tpt = [1000];
-                for wlan_i = 1 : nWlans
-                    if wlans_input(wlan_i).primary == ch, tpt = [tpt tpt_after_action(wlan_i)]; end
+                for wlan_i = 1 : num_wlans
+                    if wlans_aux(wlan_i).primary == ch, tpt = [tpt tpt_after_action(wlan_i)]; end
                 end
                 min_throughput_per_channel(ch) = min(tpt);
             end
         end
                 
-        tptAfterActionAuxiliar = zeros(1, nWlans);
-        upper_bound_tpt_aux = zeros(1, nWlans);
+        tptAfterActionAuxiliar = zeros(1, num_wlans);
+        upper_bound_tpt_aux = zeros(1, num_wlans);
         if clusteringActivated       
-            for wlan_i = 1 : nWlans      
+            for wlan_i = 1 : num_wlans      
                 %disp(['Clustering WLAN ' num2str(wlan_i) ': ' num2str(clusters{wlan_i})])                
                 if clusteringType == CLUSTERING_BY_CHANNEL                    
-                    tptAfterActionAuxiliar(wlan_i) = min_throughput_per_channel(wlans_input(wlan_i).primary);                      
+                    tptAfterActionAuxiliar(wlan_i) = min_throughput_per_channel(wlans_aux(wlan_i).primary);                      
                 elseif clusteringType == CLUSTERING_BY_SINR                                
                     tptAfterActionAuxiliar(wlan_i) = min(tpt_after_action(clusters{wlan_i}));    
                     upper_bound_tpt_aux(wlan_i) = min(upperBoundTpt(clusters{wlan_i}));
                 end                
             end
-            [rewardPerWlan, regretPerWlan] = generate_reward_with_clusters(wlans_input, selectedArm, ...
+            [rewardPerWlan, regretPerWlan] = generate_reward_with_clusters(wlans_aux, selectedArm, ...
                 tptAfterActionAuxiliar, upper_bound_tpt_aux, timesArmHasBeenPlayed, rewardType, sharedRewardType, alpha); 
         else            
             tptAfterActionAuxiliar = tpt_after_action; 
-            [rewardPerWlan, regretPerWlan] = generate_reward(wlans_input, selectedArm, ...
+            [rewardPerWlan, regretPerWlan] = generate_reward(wlans_aux, selectedArm, ...
                 tptAfterActionAuxiliar, timesArmHasBeenPlayed, rewardType, sharedRewardType, alpha); 
         end
         
@@ -268,7 +277,7 @@ function [ tpt_experienced_per_wlan, cellTimesArmHasBeenPlayed, cellEstimatedRew
         %estimatedRewardPerWlan = reward_since_last_action(estimatedRewardPerWlan, counterIterationsWithoutActing);
           
         % Update the times WN has selected the current action
-        for wlan_i = 1 : nWlans
+        for wlan_i = 1 : num_wlans
             timesArmHasBeenPlayed(wlan_i, selectedArm(wlan_i)) = ...
                 timesArmHasBeenPlayed(wlan_i, selectedArm(wlan_i)) + 1;  
         end
@@ -282,11 +291,11 @@ function [ tpt_experienced_per_wlan, cellTimesArmHasBeenPlayed, cellEstimatedRew
         % Keep track of the times an arm has been selected by each WLAN in each iteration
         cellTimesArmHasBeenPlayed{iteration} = timesArmHasBeenPlayed;
         
-        currentEstimatedRewardPerWlan = zeros(1, nWlans);
-        previousEstimatedRewardPerWlan = zeros(1, nWlans);
-        for wlan_i = 1 : nWlans
+        currentEstimatedRewardPerWlan = zeros(1, num_wlans);
+        previousEstimatedRewardPerWlan = zeros(1, num_wlans);
+        for wlan_i = 1 : num_wlans
             currentEstimatedRewardPerWlan(wlan_i) = cellEstimatedReward{iteration}(wlan_i, selectedArm(wlan_i));
-            previousEstimatedRewardPerWlan(wlan_i) = cellEstimatedReward{iteration-1}(wlan_i, previous_arm(wlan_i));
+            previousEstimatedRewardPerWlan(wlan_i) = cellEstimatedReward{iteration-1}(wlan_i, previousArm(wlan_i));
         end
         
         % Check if the algorithm has converged
@@ -305,6 +314,11 @@ function [ tpt_experienced_per_wlan, cellTimesArmHasBeenPlayed, cellEstimatedRew
     text = '... Done!';
     display_with_flag(text, displayLogsTS);
     
+    % Save the workspace in case TS with memory is used
+    save('thompson_sampling_memory.mat', 'iteration', 'currentAction', 'previousAction', ...
+        'selectedArm', 'previousArm', 'estimatedRewardPerWlan', ...
+        'timesArmHasBeenPlayed', 'transitionsCounter')     
+        
     if displayProgressBar, close(h); end
     % END OF THE ALGORITHM 
     

@@ -1,20 +1,7 @@
-%%% ***********************************************************************
-%%% * Selfish vs Oblivious MABs to Enhance Spatial Reuse in Dense WLANs   *
-%%% * Submission to                                                       *
-%%% * Authors:                                                            *
-%%% *   - Francesc Wilhelmi (francisco.wilhelmi@upf.edu)                  *
-%%% *   - Sergio Barrachina-Muñoz  (sergio.barrachina@upf.edu)            *
-%%% *   - Boris Bellalta (boris.bellalta@upf.edu)                         *
-%%% *   - Cristina Cano (ccanobs@uoc.edu)                                 *
-%%% * 	- Anders Jonsson (anders.jonsson@upf.edu)                         *
-%%% *   - Gergely Neu (gergely.neu@upf.edu)                               *
-%%% * Copyright (C) 2017-2022, and GNU GPLd, by Francesc Wilhelmi         *
-%%% * Repository:                                                         *
-%%% *  bitbucket.org/wireless_networks/selfish_vs_oblivious_spatial_reuse *
-%%% ***********************************************************************
+% FILE DESCRIPTION:
+% Script for generating the agents configuration in simulation 1.1
 
 % LEARNING ITERATIONS AND REPETITIONS
-
 totalIterations = 100;             % Maximum convergence time (one period implies the participation of all WLANs)
 minimumIterationToConsider = 1;   % Iteration from which to consider the obtained results
 
@@ -47,5 +34,4 @@ epsilonRegret = 0.1;                % Maximum allowed variability for the averag
 probabilityOfActing = 1;
 clusteringActivated = false;
 clusteringType = CLUSTERING_BY_SINR;
-
 save('configuration_agents.mat');  % Save system configuration into current folder

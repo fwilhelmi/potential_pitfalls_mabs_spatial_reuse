@@ -20,7 +20,7 @@ flag_general_logs = false;
 % - Display
 flag_display_PSI_states = false;     % Flag for displaying PSI's CTMC states
 flag_display_S_states = false;       % Flag for displaying S' CTMC states
-flag_display_wlans = true;         % Flag for displaying WLANs' input info
+flag_display_wlans = false;         % Flag for displaying WLANs' input info
 flag_display_Power_PSI = false;         % Flag for displaying sensed powers
 flag_display_Q_logical = false;     % Flag for displaying logical transition rate matrix 
 flag_display_Q = false;              % Flag for displaying transition rate matrix
@@ -63,6 +63,7 @@ INPUT_FIELD_POS_STA_Y = 12;                     % Index of pos Y in the input fi
 INPUT_FIELD_POS_STA_Z = 13;                     % Index of pos Z in the input file
 INPUT_FIELD_LEGACY = 14;                        % Index of legacy field in the input file
 INPUT_FIELD_CW = 15;                            % Index of the maximum Contention Window value
+INPUT_FIELD_ACTIVATION_ITERATION = 16;          % Index of the activation iteration of a given WLAN
 
 % Labels
 LABELS_DICTIONARY_PATH_LOSS = ['Free Space ';'Urban Macro';'Urban Pico ';'In-door sh.';'8011ax Res.';'5G Office  '];

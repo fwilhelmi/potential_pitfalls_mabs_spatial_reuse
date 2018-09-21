@@ -1,40 +1,29 @@
-%%% ***********************************************************************
-%%% * Selfish vs Oblivious MABs to Enhance Spatial Reuse in Dense WLANs   *
-%%% * Submission to                                                       *
-%%% * Authors:                                                            *
-%%% *   - Francesc Wilhelmi (francisco.wilhelmi@upf.edu)                  *
-%%% *   - Sergio Barrachina-Muñoz  (sergio.barrachina@upf.edu)            *
-%%% *   - Boris Bellalta (boris.bellalta@upf.edu)                         *
-%%% *   - Cristina Cano (ccanobs@uoc.edu)                                 *
-%%% * 	- Anders Jonsson (anders.jonsson@upf.edu)                         *
-%%% *   - Gergely Neu (gergely.neu@upf.edu)                               *
-%%% * Copyright (C) 2017-2022, and GNU GPLd, by Francesc Wilhelmi         *
-%%% * Repository:                                                         *
-%%% *  bitbucket.org/wireless_networks/selfish_vs_oblivious_spatial_reuse *
-%%% ***********************************************************************
-
-% EXPERIMENT EXPLANATION:
-%
+% FILE DESCRIPTION:
+% Script to execute experiment 3.3 (scalability performance, Environment-aware)
+% This script partially computes the results shown in Figures 12 and 13 in Section 5.2
 
 clc
 clear all
 
 disp('***********************************************************************')
-disp('* Selfish vs Oblivious MABs to Enhance Spatial Reuse in Dense WLANs   *')
-disp('* Submission to                                                       *')
+disp('*         Potential and Pitfalls of Multi-Armed Bandits for           *')
+disp('*               Decentralized Spatial Reuse in WLANs                  *')
+disp('*                                                                     *')
+disp('* Submission to Journal on Network and Computer Applications          *')
 disp('* Authors:                                                            *')
 disp('*   - Francesc Wilhelmi (francisco.wilhelmi@upf.edu)                  *')
 disp('*   - Sergio Barrachina-Muñoz  (sergio.barrachina@upf.edu)            *')
 disp('*   - Boris Bellalta (boris.bellalta@upf.edu)                         *')
+disp('*   - Cristina Cano (ccanobs@uoc.edu)                                 *')
 disp('*   - Anders Jonsson (anders.jonsson@upf.edu)                         *')
 disp('*   - Gergely Neu (gergely.neu@upf.edu)                               *')
 disp('* Copyright (C) 2017-2022, and GNU GPLd, by Francesc Wilhelmi         *')
 disp('* Repository:                                                         *')
-disp('*  bitbucket.org/wireless_networks/selfish_vs_oblivious_spatial_reuse *')
+disp('*  https://github.com/fwilhelmi/potential_pitfalls_mabs_spatial_reuse *')
 disp('***********************************************************************')
 
 disp('----------------------------------------------')
-disp('EXPERIMENT 4-3 SCALABILITY COLLABORATIVE LEARNING')
+disp('EXPERIMENT 3.3')
 disp('----------------------------------------------')
 
 fprintf('Experiment started at time %s\n', datestr(now,'HH:MM:SS.FFF'))
@@ -45,11 +34,11 @@ fprintf('Experiment started at time %s\n', datestr(now,'HH:MM:SS.FFF'))
 constants_sfctmn_framework
 constants_thompson_sampling
 % Set configurations
-configuration_system_sim_4
-configuration_agents_sim_4_3
+configuration_system_sim_3
+configuration_agents_sim_3_3
 
 %% LOAD THE SCENARIO
-load('wlans_container_good.mat')
+load('wlans_container.mat')
 
 % Rewarding type
 rewardType = REWARD_JOINT;
@@ -58,7 +47,7 @@ convergenceActivated = false;                % Determine convergence according t
 convergenceType = CASE_CONVERGENCE_TYPE_4;   % Type of convergence (avg. regret, estimated reward...)
 
 %% RUN THOMPSON SAMPLING IN EACH SCENARIO
-for s = 1 : 1%size(wlans_container, 1)
+for s = 1 : size(wlans_container, 1)
 
     disp('+++++++++++++++++++++++++++++++')
     disp([' NUMBER OF WLANs: ' num2str(size(wlans_container{s}, 2))])    

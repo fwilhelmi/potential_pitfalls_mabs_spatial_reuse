@@ -1,17 +1,19 @@
-%%% ***********************************************************************
-%%% * Selfish vs Oblivious MABs to Enhance Spatial Reuse in Dense WLANs   *
-%%% * Submission to                                                       *
-%%% * Authors:                                                            *
-%%% *   - Francesc Wilhelmi (francisco.wilhelmi@upf.edu)                  *
-%%% *   - Sergio Barrachina-Muñoz  (sergio.barrachina@upf.edu)            *
-%%% *   - Boris Bellalta (boris.bellalta@upf.edu)                         *
-%%% *   - Cristina Cano (ccanobs@uoc.edu)                                 *
-%%% * 	- Anders Jonsson (anders.jonsson@upf.edu)                         *
-%%% *   - Gergely Neu (gergely.neu@upf.edu)                               *
-%%% * Copyright (C) 2017-2022, and GNU GPLd, by Francesc Wilhelmi         *
-%%% * Repository:                                                         *
-%%% *  bitbucket.org/wireless_networks/selfish_vs_oblivious_spatial_reuse *
-%%% ***********************************************************************
+% ***********************************************************************
+% *         Potential and Pitfalls of Multi-Armed Bandits for           *
+% *               Decentralized Spatial Reuse in WLANs                  *
+% *                                                                     *
+% * Submission to Journal on Network and Computer Applications          *
+% * Authors:                                                            *
+% *   - Francesc Wilhelmi (francisco.wilhelmi@upf.edu)                  *
+% *   - Sergio Barrachina-Muñoz  (sergio.barrachina@upf.edu)            *
+% *   - Boris Bellalta (boris.bellalta@upf.edu)                         *
+% *   - Cristina Cano (ccanobs@uoc.edu)                                 *
+% *   - Anders Jonsson (anders.jonsson@upf.edu)                         *
+% *   - Gergely Neu (gergely.neu@upf.edu)                               *
+% * Copyright (C) 2017-2022, and GNU GPLd, by Francesc Wilhelmi         *
+% * Repository:                                                         *
+% *  https://github.com/fwilhelmi/potential_pitfalls_mabs_spatial_reuse *
+% ***********************************************************************
 
 function [] = display_experiment_information( wlans_input )
 
@@ -28,7 +30,7 @@ function [] = display_experiment_information( wlans_input )
     disp([LOG_LVL2 'System parameters:'])
     disp([LOG_LVL3 'path_loss_model: ' num2str(path_loss_model)])
     disp([LOG_LVL3 'carrier_frequency (GHz): ' num2str(carrier_frequency)])
-    disp([LOG_LVL3 'noise (dBM): ' num2str(NOISE_DBM)])
+    disp([LOG_LVL3 'noise (dBm): ' num2str(NOISE_DBM)])
     disp([LOG_LVL3 'nChannels: ' num2str(nChannels)])
     disp([LOG_LVL3 'dsa_policy_type: ' num2str(dsa_policy_type)])
     
@@ -38,7 +40,7 @@ function [] = display_experiment_information( wlans_input )
     disp([LOG_LVL3 'txPowerActions: ' num2str(txPowerActions)])
     
     disp([LOG_LVL2 'MABs parameters:'])
-    disp([LOG_LVL3 'totalIterations: ' num2str(totalIterations)])
+%    disp([LOG_LVL3 'totalIterations: ' num2str(totalIterations)])
     disp([LOG_LVL3 'minimumIterationToConsider: ' num2str(minimumIterationToConsider)])
     disp([LOG_LVL3 'randomInitialConfiguration: ' num2str(randomInitialConfiguration)])
     disp([LOG_LVL3 'convergenceActivated: ' num2str(convergenceActivated)])

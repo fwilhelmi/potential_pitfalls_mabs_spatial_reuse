@@ -1,28 +1,13 @@
-%%% ***********************************************************************
-%%% * Selfish vs Oblivious MABs to Enhance Spatial Reuse in Dense WLANs   *
-%%% * Submission to                                                       *
-%%% * Authors:                                                            *
-%%% *   - Francesc Wilhelmi (francisco.wilhelmi@upf.edu)                  *
-%%% *   - Sergio Barrachina-Muñoz  (sergio.barrachina@upf.edu)            *
-%%% *   - Boris Bellalta (boris.bellalta@upf.edu)                         *
-%%% *   - Cristina Cano (ccanobs@uoc.edu)                                 *
-%%% * 	- Anders Jonsson (anders.jonsson@upf.edu)                         *
-%%% *   - Gergely Neu (gergely.neu@upf.edu)                               *
-%%% * Copyright (C) 2017-2022, and GNU GPLd, by Francesc Wilhelmi         *
-%%% * Repository:                                                         *
-%%% *  bitbucket.org/wireless_networks/selfish_vs_oblivious_spatial_reuse *
-%%% ***********************************************************************
-
-% EXPERIMENT EXPLANATION:
-%
+% FILE DESCRIPTION:
+% Script for generating the Scenarios used in simulation 3
 
 clear all
 clc
 %% DEFINE THE VARIABLES TO BE USED
 constants_sfctmn_framework
 constants_thompson_sampling
-configuration_system_sim_4
-configuration_agents_sim_4
+configuration_system_sim_3
+configuration_agents_sim_3
 
 draw_map = false;
 display_wlans = false;
