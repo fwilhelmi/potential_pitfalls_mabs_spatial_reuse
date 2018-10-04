@@ -63,6 +63,16 @@ function [ power_rx ] = compute_power_received(distance, power_tx, G_tx, G_rx, f
             loss = 40.05 + 20*log10(f/2.4) + 20 * log10(min(distance,5)) + ...
                    breakpoint_loss + 18.3*(distance/n_floors)^(((distance/n_floors)+2)/...
                    ((distance/n_floors)+1) - 0.46) + 5*(distance/n_walls);   
+               
+        case PATH_LOSS_ROOM_CORRIDOR_5250KHZ
+                      
+           d_BP = 9;
+           
+           if distance <= d_BP
+              loss = 53.2 + 25.8 * log10(distance);
+           else 
+              loss = 56.4 + 29.1 * log10(distance);
+           end
                                                   
         otherwise
              error('Unknwown path loss model!')

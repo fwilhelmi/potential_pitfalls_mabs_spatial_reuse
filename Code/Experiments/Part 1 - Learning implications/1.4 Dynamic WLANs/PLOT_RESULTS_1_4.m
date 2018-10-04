@@ -29,7 +29,14 @@ disp('----------------------------------------------')
 % Generate constants 
 constants_sfctmn_framework
 % Set specific configurations
-configuration_system_sim_test          
+configuration_system_sim_1_4        
+
+% Set font type
+set(0,'defaultUicontrolFontName','Times New Roman');
+set(0,'defaultUitableFontName','Times New Roman');
+set(0,'defaultAxesFontName','Times New Roman');
+set(0,'defaultTextFontName','Times New Roman');
+set(0,'defaultUipanelFontName','Times New Roman');
 
 %% Max-min throughput experienced in each iteration
 load('workspace_sim_1_4_1.mat')

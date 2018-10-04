@@ -107,6 +107,13 @@ disp([' * Mean JFI: ' num2str(mean(jains_fairness(tptEvolutionPerWlan)))])
 
 %% Max-min throughput experienced in each iteration
 max_min_tpt_per_iteration = zeros(1, totalIterations);
+
+% Set font type
+set(0,'defaultUicontrolFontName','Times New Roman');
+set(0,'defaultUitableFontName','Times New Roman');
+set(0,'defaultAxesFontName','Times New Roman');
+set(0,'defaultTextFontName','Times New Roman');
+set(0,'defaultUipanelFontName','Times New Roman');
 fig = figure('pos',[450 400 500 350]);
 axes;
 axis([1 20 30 70]);
@@ -122,7 +129,7 @@ grid on
 grid minor
 h1 = plot(1 : initialTotalIterations, min(optimalTptPerWlanWithoutB) * ones(1, initialTotalIterations), 'r--', 'linewidth',2);
 h2 = plot(initialTotalIterations + 1 : totalIterations, min(upperBoundTpt) * ones(1, totalIterations - initialTotalIterations), 'r--', 'linewidth',2);
-legend({'Temporal throughput', 'Optimal (Max. Prop. Fairness)'});
+legend(h2, {'Optimal (Max. Prop. Fairness)'});
 set(gca,'FontSize', 22)
 xlabel('TS iteration', 'fontsize', 24)
 ylabel('Max-min Throughput (Mbps)', 'fontsize', 24)

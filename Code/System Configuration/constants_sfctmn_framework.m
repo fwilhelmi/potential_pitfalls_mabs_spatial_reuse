@@ -66,7 +66,7 @@ INPUT_FIELD_CW = 15;                            % Index of the maximum Contentio
 INPUT_FIELD_ACTIVATION_ITERATION = 16;          % Index of the activation iteration of a given WLAN
 
 % Labels
-LABELS_DICTIONARY_PATH_LOSS = ['Free Space ';'Urban Macro';'Urban Pico ';'In-door sh.';'8011ax Res.';'5G Office  '];
+LABELS_DICTIONARY_PATH_LOSS = ['Free Space ';'Urban Macro';'Urban Pico ';'In-door sh.';'8011ax Res.';'8011ax Res.';'Corridor525'];
 LABELS_DICTIONARY_ACCESS_PROTOCOL = ['Log2maps';'Adjacent';'IE802.11'];
 LABELS_DICTIONARY_DSA_POLICY = ['Aggressive';'OnlyMax   ';'ExplorerUn';'ExplorerLa';'OnlyPri   '];
 
@@ -122,6 +122,7 @@ PATH_LOSS_URBAN_MICRO = 3;                      % Pico/hotzone deployment
 PATH_LOSS_INDOOR_SHADOWING = 4;                 % WLAN indorr path loss model
 PATH_LOSS_AX_RESIDENTIAL = 5;                   % Retrieved from: https://mentor.ieee.org/802.11/dcn/14/11-14-0882-04-00ax-tgax-channel-model-document.docx
 PATH_LOSS_5G_OFFICE = 6;
+PATH_LOSS_ROOM_CORRIDOR_5250KHZ = 7;
 
 PATH_LOSS_5G_OFFICE_ALPHA = 0.44;               % [dbm/m] from https://arxiv.org/pdf/1801.00594.pdf
 

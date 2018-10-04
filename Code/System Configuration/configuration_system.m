@@ -1,7 +1,7 @@
 % FILE DESCRIPTION:
 % Script for generating the default system configuration
 
-path_loss_model = PATH_LOSS_AX_RESIDENTIAL;         % Path loss model index
+path_loss_model = PATH_LOSS_ROOM_CORRIDOR_5250KHZ;         % Path loss model index
 access_protocol_type = ACCESS_PROTOCOL_IEEE80211;   % Access protocol type
 flag_hardcode_distances = true;                     % Allows hardcoding distances from main_sfctmn.m file
 carrier_frequency = 5;                              % Carrier frequency [GHz] (2.4 or 5) GHz

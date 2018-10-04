@@ -74,10 +74,10 @@ function [throughput, powerRxStationFromAp, powerRxApFromAp, SINR_cell] = functi
                 GAIN_TX_DEFAULT, GAIN_RX_DEFAULT, carrier_frequency, path_loss_model);     
         end
     end
-        
+               
     % Compute the MCS according to the SINR in isolation mode
     mcs_per_wlan = compute_mcs(powerRxStationFromAp, nChannels);
-    
+        
     % SINR sensed in the STA in isolation (just considering ambient noise)
     %  - NOT USED
     sinr_isolation = compute_sinr(powerRxStationFromAp, 0, NOISE_DBM);    
@@ -107,21 +107,21 @@ function [throughput, powerRxStationFromAp, powerRxApFromAp, SINR_cell] = functi
     [ Power_AP_PSI_cell, Power_STA_PSI_cell, SINR_cell] = compute_sensed_power(wlans_aux, num_global_states, PSI_cell, path_loss_model, ...
         carrier_frequency, flag_general_logs, powerRxStationFromAp, distance_ap_ap, distance_ap_sta, nChannels);
     display_with_flag([LOG_LVL2 'Sensed power computed!'], flag_general_logs)    
-%     disp('Power_AP_PSI_cell')
-%     Power_AP_PSI_cell{1}
-%     Power_AP_PSI_cell{2}
-%     Power_AP_PSI_cell{3}
+    disp('Power_AP_PSI_cell')
+    Power_AP_PSI_cell{1}
+    Power_AP_PSI_cell{2}
+    Power_AP_PSI_cell{3}
 %     Power_AP_PSI_cell{4}
-%     disp('Power_STA_PSI_cell')
-%     Power_STA_PSI_cell{1}
-%     Power_STA_PSI_cell{2}
-%     Power_STA_PSI_cell{3}
+    disp('Power_STA_PSI_cell')
+    Power_STA_PSI_cell{1}
+    Power_STA_PSI_cell{2}
+    Power_STA_PSI_cell{3}
 %     Power_STA_PSI_cell{4}
 %     
-%     disp('SINR_cell')
-%     SINR_cell{1}
-%     SINR_cell{2}
-%     SINR_cell{3}
+    disp('SINR_cell')
+    SINR_cell{1}
+    SINR_cell{2}
+    SINR_cell{3}
 %     SINR_cell{4}
     
     %% FEASIBLE STATES SPACE (S)

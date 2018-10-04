@@ -116,6 +116,13 @@ disp([' * Mean JFI: ' num2str(mean(jains_fairness(mean_tpt)))])
 
 %% Max-min throughput experienced in each iteration
 max_min_tpt_per_iteration = zeros(1, totalIterations);
+
+% Set font type
+set(0,'defaultUicontrolFontName','Times New Roman');
+set(0,'defaultUitableFontName','Times New Roman');
+set(0,'defaultAxesFontName','Times New Roman');
+set(0,'defaultTextFontName','Times New Roman');
+set(0,'defaultUipanelFontName','Times New Roman');
 fig = figure('pos',[450 400 500 350]);
 axes;
 axis([1 20 30 70]);
