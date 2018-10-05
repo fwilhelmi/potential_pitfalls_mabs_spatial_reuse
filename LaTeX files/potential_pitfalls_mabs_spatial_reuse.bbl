@@ -1,162 +1,217 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{32}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem{bellalta2016ax}
-Boris Bellalta.
-\newblock {IEEE} 802.11 ax: High-efficiency {WLAN}s.
-\newblock {\em IEEE Wireless Communications}, 23(1):38--46, 2016.
+\bibitem[iee(2015)]{ieee2015qam}
+{IEEE} 802.11-15/1070r4 - 1024 {QAM} proposal.
+\newblock \emph{IEEE}, 802:\penalty0 802--11, 2015.
 
-\bibitem{ergin2007understanding}
-Mesut~Ali Ergin, Kishore Ramachandran, and Marco Gruteser.
-\newblock Understanding the effect of access point density on wireless lan
-  performance.
-\newblock In {\em Proceedings of the 13th annual ACM international conference
-  on Mobile computing and networking}, pages 350--353. ACM, 2007.
+\bibitem[tga(September 2017)]{tgax2017draft}
+{IEEE} p802.11ax/d2.0, September 2017.
 
-\bibitem{smith2015dynamic}
-G~Smith.
-\newblock Dynamic sensitivity control-v2.
-\newblock {\em IEEE}, 802:802--11, 2015.
+\bibitem[Agrawal and Goyal(2013)]{agrawal2013further}
+S.~Agrawal and N.~Goyal.
+\newblock Further optimal regret bounds for thompson sampling.
+\newblock In \emph{Artificial Intelligence and Statistics}, pages 99--107,
+  2013.
 
-\bibitem{chen2010distributed}
-Lin Chen.
-\newblock A distributed access point selection algorithm based on no-regret
-  learning for wireless access networks.
-\newblock In {\em Vehicular Technology Conference (VTC 2010-Spring), 2010 IEEE
-  71st}, pages 1--5. IEEE, 2010.
+\bibitem[Akella et~al.(2007)Akella, Judd, Seshan, and
+  Steenkiste]{akella2007self}
+A.~Akella, G.~Judd, S.~Seshan, and P.~Steenkiste.
+\newblock Self-management in chaotic wireless deployments.
+\newblock \emph{Wireless Networks}, 13\penalty0 (6):\penalty0 737--755, 2007.
 
-\bibitem{maghsudi2015channel}
-Setareh Maghsudi and S{\l}awomir Sta{\'n}czak.
-\newblock Channel selection for network-assisted {D2D} communication via
-  no-regret bandit learning with calibrated forecasting.
-\newblock {\em IEEE Transactions on Wireless Communications}, 14(3):1309--1322,
-  2015.
-
-\bibitem{maghsudi2015joint}
-Setareh Maghsudi and S{\l}awomir Sta{\'n}czak.
-\newblock Joint channel selection and power control in infrastructureless
-  wireless networks: A multiplayer multiarmed bandit framework.
-\newblock {\em IEEE Transactions on Vehicular Technology}, 64(10):4565--4578,
-  2015.
-
-\bibitem{wilhelmi2017collaborative}
-Francesc Wilhelmi, Boris Bellalta, Jonsson Anders Neu~Gergely Cano, Cristina,
-  and Sergio Barrachina.
-\newblock Collaborative spatial reuse in wireless networks via selfish bandits.
-\newblock {\em arXiv preprint arXiv:1705.10508}, 2017.
-
-\bibitem{bellalta2017throughput}
-Boris Bellalta.
-\newblock Throughput analysis in high density wlans.
-\newblock {\em IEEE Communications Letters}, 21(3):592--595, 2017.
-
-\bibitem{nie1999q}
-Junhong Nie and Simon Haykin.
-\newblock A q-learning-based dynamic channel assignment technique for mobile
-  communication systems.
-\newblock {\em IEEE Transactions on Vehicular Technology}, 48(5):1676--1687,
-  1999.
-
-\bibitem{li2009multi}
-Husheng Li.
-\newblock Multi-agent q-learning of channel selection in multi-user cognitive
-  radio systems: A two by two case.
-\newblock In {\em Systems, Man and Cybernetics, 2009. SMC 2009. IEEE
-  International Conference on}, pages 1893--1898. IEEE, 2009.
-
-\bibitem{bennis2010q}
-Mehdi Bennis and Dusit Niyato.
-\newblock A q-learning based approach to interference avoidance in
-  self-organized femtocell networks.
-\newblock In {\em GLOBECOM Workshops (GC Wkshps), 2010 IEEE}, pages 706--710.
-  IEEE, 2010.
-
-\bibitem{bennis2011distributed}
-Mehdi Bennis, Sudarshan Guruacharya, and Dusit Niyato.
-\newblock Distributed learning strategies for interference mitigation in
-  femtocell networks.
-\newblock In {\em Global Telecommunications Conference (GLOBECOM 2011), 2011
-  IEEE}, pages 1--5. IEEE, 2011.
-
-\bibitem{sallent2015learning}
-Oriol Sallent, Jordi P{\'e}rez-Romero, Ramon Ferr{\'u}s, and Ram{\'o}n
-  Agust{\'\i}.
-\newblock Learning-based coexistence for lte operation in unlicensed bands.
-\newblock In {\em Communication Workshop (ICCW), 2015 IEEE International
-  Conference on}, pages 2307--2313. IEEE, 2015.
-
-\bibitem{rupasinghe2015reinforcement}
-Nadisanka Rupasinghe and {\.I}smail G{\"u}ven{\c{c}}.
-\newblock Reinforcement learning for licensed-assisted access of lte in the
-  unlicensed spectrum.
-\newblock In {\em Wireless Communications and Networking Conference (WCNC),
-  2015 IEEE}, pages 1279--1284. IEEE, 2015.
-
-\bibitem{liu2010distributed}
-Keqin Liu and Qing Zhao.
-\newblock Distributed learning in multi-armed bandit with multiple players.
-\newblock {\em IEEE Transactions on Signal Processing}, 58(11):5667--5681,
-  2010.
-
-\bibitem{anandkumar2011distributed}
-Animashree Anandkumar, Nithin Michael, Ao~Kevin Tang, and Ananthram Swami.
+\bibitem[Anandkumar et~al.(2011)Anandkumar, Michael, Tang, and
+  Swami]{anandkumar2011distributed}
+A.~Anandkumar, N.~Michael, A.~K. Tang, and A.~Swami.
 \newblock Distributed algorithms for learning and cognitive medium access with
   logarithmic regret.
-\newblock {\em IEEE Journal on Selected Areas in Communications},
-  29(4):731--745, 2011.
+\newblock \emph{IEEE Journal on Selected Areas in Communications}, 29\penalty0
+  (4):\penalty0 731--745, 2011.
 
-\bibitem{rosenski2016multi}
-Jonathan Rosenski, Ohad Shamir, and Liran Szlak.
-\newblock Multi-player bandits--a musical chairs approach.
-\newblock In {\em International Conference on Machine Learning}, pages
-  155--163, 2016.
+\bibitem[Audibert et~al.(2009)Audibert, Munos, and
+  Szepesv{\'a}ri]{audibert2009exploration}
+J.-Y. Audibert, R.~Munos, and C.~Szepesv{\'a}ri.
+\newblock Exploration--exploitation tradeoff using variance estimates in
+  multi-armed bandits.
+\newblock \emph{Theoretical Computer Science}, 410\penalty0 (19):\penalty0
+  1876--1902, 2009.
 
-\bibitem{barrachina2018performance}
-Sergio Barrachina-Mu{\~n}oz, Francesc Wilhelmi, and Boris Bellalta.
+\bibitem[Auer et~al.(1995)Auer, Cesa-Bianchi, Freund, and
+  Schapire]{auer1995gambling}
+P.~Auer, N.~Cesa-Bianchi, Y.~Freund, and R.~E. Schapire.
+\newblock Gambling in a rigged casino: The adversarial multi-armed bandit
+  problem.
+\newblock In \emph{Foundations of Computer Science, 1995. Proceedings., 36th
+  Annual Symposium on}, pages 322--331. IEEE, 1995.
+
+\bibitem[Auer et~al.(2002)Auer, Cesa-Bianchi, and Fischer]{auer2002finite}
+P.~Auer, N.~Cesa-Bianchi, and P.~Fischer.
+\newblock Finite-time analysis of the multiarmed bandit problem.
+\newblock \emph{Machine learning}, 47\penalty0 (2-3):\penalty0 235--256, 2002.
+
+\bibitem[Barrachina-Mu{\~n}oz et~al.(2018{\natexlab{a}})Barrachina-Mu{\~n}oz,
+  Wilhelmi, and Bellalta]{barrachina2018overlap}
+S.~Barrachina-Mu{\~n}oz, F.~Wilhelmi, and B.~Bellalta.
+\newblock To overlap or not to overlap: Enabling channel bonding in high
+  density wlans.
+\newblock \emph{arXiv preprint arXiv:1803.09112}, 2018{\natexlab{a}}.
+
+\bibitem[Barrachina-Mu{\~n}oz et~al.(2018{\natexlab{b}})Barrachina-Mu{\~n}oz,
+  Wilhelmi, and Bellalta]{barrachina2018performance}
+S.~Barrachina-Mu{\~n}oz, F.~Wilhelmi, and B.~Bellalta.
 \newblock Performance analysis of dynamic channel bonding in spatially
   distributed high density wlans.
-\newblock {\em arXiv preprint arXiv:1801.00594}, 2018.
+\newblock \emph{arXiv preprint arXiv:1801.00594}, 2018{\natexlab{b}}.
 
-\bibitem{fwilhelmi2018code}
-Francesc Wilhelmi.
-\newblock Potentials and pitfalls of decentralized spatial reuse.
+\bibitem[Bellalta(2016)]{bellalta2016ax}
+B.~Bellalta.
+\newblock {IEEE} 802.11 ax: High-efficiency {WLAN}s.
+\newblock \emph{IEEE Wireless Communications}, 23\penalty0 (1):\penalty0
+  38--46, 2016.
+
+\bibitem[Bellalta(2017)]{bellalta2017throughput}
+B.~Bellalta.
+\newblock Throughput analysis in high density wlans.
+\newblock \emph{IEEE Communications Letters}, 21\penalty0 (3):\penalty0
+  592--595, 2017.
+
+\bibitem[Bennis and Niyato(2010)]{bennis2010q}
+M.~Bennis and D.~Niyato.
+\newblock A {Q}-learning based approach to interference avoidance in
+  self-organized femtocell networks.
+\newblock In \emph{GLOBECOM Workshops (GC Wkshps), 2010 IEEE}, pages 706--710.
+  IEEE, 2010.
+
+\bibitem[Bennis et~al.(2011)Bennis, Guruacharya, and
+  Niyato]{bennis2011distributed}
+M.~Bennis, S.~Guruacharya, and D.~Niyato.
+\newblock Distributed learning strategies for interference mitigation in
+  femtocell networks.
+\newblock In \emph{Global Telecommunications Conference (GLOBECOM 2011), 2011
+  IEEE}, pages 1--5. IEEE, 2011.
+
+\bibitem[Chen(2010)]{chen2010distributed}
+L.~Chen.
+\newblock A distributed access point selection algorithm based on no-regret
+  learning for wireless access networks.
+\newblock In \emph{Vehicular Technology Conference (VTC 2010-Spring), 2010 IEEE
+  71st}, pages 1--5. IEEE, 2010.
+
+\bibitem[Ergin et~al.(2007)Ergin, Ramachandran, and
+  Gruteser]{ergin2007understanding}
+M.~A. Ergin, K.~Ramachandran, and M.~Gruteser.
+\newblock Understanding the effect of access point density on wireless {LAN}
+  performance.
+\newblock In \emph{Proceedings of the 13th annual ACM international conference
+  on Mobile computing and networking}, pages 350--353. ACM, 2007.
+
+\bibitem[Gupta et~al.(2011)Gupta, Granmo, and Agrawala]{gupta2011thompson}
+N.~Gupta, O.-C. Granmo, and A.~Agrawala.
+\newblock Thompson sampling for dynamic multi-armed bandits.
+\newblock In \emph{2011 10th International Conference on Machine Learning and
+  Applications Workshops}, pages 484--489. IEEE, 2011.
+
+\bibitem[Hartland et~al.(2006)Hartland, Gelly, Baskiotis, Teytaud, and
+  Sebag]{hartland2006multi}
+C.~Hartland, S.~Gelly, N.~Baskiotis, O.~Teytaud, and M.~Sebag.
+\newblock Multi-armed bandit, dynamic environments and meta-bandits.
+\newblock 2006.
+
+\bibitem[Li(2009)]{li2009multi}
+H.~Li.
+\newblock Multi-agent q-learning of channel selection in multi-user cognitive
+  radio systems: A two by two case.
+\newblock In \emph{Systems, Man and Cybernetics, 2009. SMC 2009. IEEE
+  International Conference on}, pages 1893--1898. IEEE, 2009.
+
+\bibitem[Liu and Zhao(2010)]{liu2010distributed}
+K.~Liu and Q.~Zhao.
+\newblock Distributed learning in multi-armed bandit with multiple players.
+\newblock \emph{IEEE Transactions on Signal Processing}, 58\penalty0
+  (11):\penalty0 5667--5681, 2010.
+
+\bibitem[Maghsudi and Sta{\'n}czak(2015{\natexlab{a}})]{maghsudi2015channel}
+S.~Maghsudi and S.~Sta{\'n}czak.
+\newblock Channel selection for network-assisted {D2D} communication via
+  no-regret bandit learning with calibrated forecasting.
+\newblock \emph{IEEE Transactions on Wireless Communications}, 14\penalty0
+  (3):\penalty0 1309--1322, 2015{\natexlab{a}}.
+
+\bibitem[Maghsudi and Sta{\'n}czak(2015{\natexlab{b}})]{maghsudi2015joint}
+S.~Maghsudi and S.~Sta{\'n}czak.
+\newblock Joint channel selection and power control in infrastructureless
+  wireless networks: A multiplayer multiarmed bandit framework.
+\newblock \emph{IEEE Transactions on Vehicular Technology}, 64\penalty0
+  (10):\penalty0 4565--4578, 2015{\natexlab{b}}.
+
+\bibitem[Merlin et~al.(2015)Merlin, Barriac, Sampath, Cariou, Derham,
+  Le~Rouzic, Stacey, Park, Porat, Jindal, et~al.]{merlin2015tgax}
+S.~Merlin, G.~Barriac, H.~Sampath, L.~Cariou, T.~Derham, J.~Le~Rouzic,
+  R.~Stacey, M.~Park, R.~Porat, N.~Jindal, et~al.
+\newblock Tgax simulation scenarios.
+\newblock \emph{doc.: IEEE}, pages 802--11, 2015.
+
+\bibitem[Nie and Haykin(1999)]{nie1999q}
+J.~Nie and S.~Haykin.
+\newblock A {Q}-learning-based dynamic channel assignment technique for mobile
+  communication systems.
+\newblock \emph{IEEE Transactions on Vehicular Technology}, 48\penalty0
+  (5):\penalty0 1676--1687, 1999.
+
+\bibitem[Rosenski et~al.(2016)Rosenski, Shamir, and Szlak]{rosenski2016multi}
+J.~Rosenski, O.~Shamir, and L.~Szlak.
+\newblock Multi-player bandits--a musical chairs approach.
+\newblock In \emph{International Conference on Machine Learning}, pages
+  155--163, 2016.
+
+\bibitem[Rupasinghe and G{\"u}ven{\c{c}}(2015)]{rupasinghe2015reinforcement}
+N.~Rupasinghe and {\.I}.~G{\"u}ven{\c{c}}.
+\newblock Reinforcement learning for licensed-assisted access of {LTE} in the
+  unlicensed spectrum.
+\newblock In \emph{Wireless Communications and Networking Conference (WCNC),
+  2015 IEEE}, pages 1279--1284. IEEE, 2015.
+
+\bibitem[Sallent et~al.(2015)Sallent, P{\'e}rez-Romero, Ferr{\'u}s, and
+  Agust{\'\i}]{sallent2015learning}
+O.~Sallent, J.~P{\'e}rez-Romero, R.~Ferr{\'u}s, and R.~Agust{\'\i}.
+\newblock Learning-based coexistence for {LTE} operation in unlicensed bands.
+\newblock In \emph{International Conference on Communication Workshop (ICCW)},
+  pages 2307--2313. IEEE, 2015.
+
+\bibitem[Scott(2010)]{scott2010modern}
+S.~L. Scott.
+\newblock A modern bayesian look at the multi-armed bandit.
+\newblock \emph{Applied Stochastic Models in Business and Industry},
+  26\penalty0 (6):\penalty0 639--658, 2010.
+
+\bibitem[Smith(2015)]{smith2015dynamic}
+G.~Smith.
+\newblock Dynamic sensitivity control-v2.
+\newblock \emph{IEEE}, 802:\penalty0 802--11, 2015.
+
+\bibitem[Thompson(1933)]{thompson1933likelihood}
+W.~R. Thompson.
+\newblock On the likelihood that one unknown probability exceeds another in
+  view of the evidence of two samples.
+\newblock \emph{Biometrika}, 25\penalty0 (3/4):\penalty0 285--294, 1933.
+
+\bibitem[Wilhelmi(2018)]{fwilhelmi2018code}
+F.~Wilhelmi.
+\newblock Potential and pitfalls of multi-armed bandits for decentralized
+  spatial reuse in wlans.
 \newblock
   \url{https://github.com/fwilhelmi/potential_pitfalls_mabs_spatial_reuse}\\
   Commit: e761e6e, 2018.
 
-\bibitem{akella2007self}
-Aditya Akella, Glenn Judd, Srinivasan Seshan, and Peter Steenkiste.
-\newblock Self-management in chaotic wireless deployments.
-\newblock {\em Wireless Networks}, 13(6):737--755, 2007.
-
-\bibitem{auer1995gambling}
-Peter Auer, Nicol\'o Cesa-Bianchi, Yoav Freund, and Robert~E Schapire.
-\newblock Gambling in a rigged casino: The adversarial multi-armed bandit
-  problem.
-\newblock In {\em Foundations of Computer Science, 1995. Proceedings., 36th
-  Annual Symposium on}, pages 322--331. IEEE, 1995.
-
-\bibitem{thompson1933likelihood}
-William~R Thompson.
-\newblock On the likelihood that one unknown probability exceeds another in
-  view of the evidence of two samples.
-\newblock {\em Biometrika}, 25(3/4):285--294, 1933.
-
-\bibitem{agrawal2013further}
-Shipra Agrawal and Navin Goyal.
-\newblock Further optimal regret bounds for thompson sampling.
-\newblock In {\em Artificial Intelligence and Statistics}, pages 99--107, 2013.
-
-\bibitem{merlin2015tgax}
-S~Merlin, G~Barriac, H~Sampath, L~Cariou, T~Derham, JP~Le~Rouzic, R~Stacey,
-  M~Park, R~Porat, N~Jindal, et~al.
-\newblock Tgax simulation scenarios.
-\newblock {\em doc.: IEEE}, pages 802--11, 2015.
-
-\bibitem{ieee2015qam}
-{IEEE} 802.11-15/1070r4 - 1024 {QAM} proposal.
-\newblock {\em IEEE}, 802:802--11, 2015.
-
-\bibitem{tgax2017draft}
-{IEEE} p802.11ax/d2.0, September 2017.
+\bibitem[Wilhelmi et~al.(2017)Wilhelmi, Bellalta, Cano, Jonsson, Neu, and
+  Barrachina-Mu{\~n}oz]{wilhelmi2017collaborative}
+F.~Wilhelmi, B.~Bellalta, C.~Cano, A.~Jonsson, G.~Neu, and
+  S.~Barrachina-Mu{\~n}oz.
+\newblock Collaborative spatial reuse in wireless networks via selfish bandits.
+\newblock \emph{arXiv preprint arXiv:1705.10508}, 2017.
 
 \end{thebibliography}

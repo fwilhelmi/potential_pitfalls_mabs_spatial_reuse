@@ -1,60 +1,53 @@
-This is BibTeX, Version 0.99d (TeX Live 2016)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: potential_pitfalls_mabs_spatial_reuse.aux
-The style file: unsrt.bst
+The style file: abbrvnat.bst
 Database file #1: references.bib
 Warning--entry type for "tgax2017draft" isn't style-file defined
 --line 155 of file references.bib
-Repeated entry---line 247 of file references.bib
- : @inproceedings{auer1995gambling
- :                                ,
-I'm skipping whatever remains of this entry
-Too many commas in name 3 of "Wilhelmi, Francesc and Bellalta, Boris and Cano, Cristina, Jonsson, Anders, Neu, Gergely and Barrachina, Sergio" for entry wilhelmi2017collaborative
-while executing---line 944 of file unsrt.bst
-Too many commas in name 3 of "Wilhelmi, Francesc and Bellalta, Boris and Cano, Cristina, Jonsson, Anders, Neu, Gergely and Barrachina, Sergio" for entry wilhelmi2017collaborative
-while executing---line 944 of file unsrt.bst
-Too many commas in name 3 of "Wilhelmi, Francesc and Bellalta, Boris and Cano, Cristina, Jonsson, Anders, Neu, Gergely and Barrachina, Sergio" for entry wilhelmi2017collaborative
-while executing---line 944 of file unsrt.bst
+Warning--to sort, need author or key in ieee2015qam
+Warning--to sort, need author or key in tgax2017draft
 Warning--empty author in ieee2015qam
-You've used 26 entries,
-            1791 wiz_defined-function locations,
-            595 strings with 8354 characters,
-and the built_in function-call counts, 7303 in all, are:
-= -- 726
-> -- 235
-< -- 11
-+ -- 90
-- -- 64
-* -- 455
-:= -- 1032
-add.period$ -- 83
-call.type$ -- 26
-change.case$ -- 26
-chr.to.int$ -- 0
-cite$ -- 27
-duplicate$ -- 349
-empty$ -- 734
-format.name$ -- 64
-if$ -- 1715
-int.to.chr$ -- 0
-int.to.str$ -- 26
-missing$ -- 24
-newline$ -- 130
-num.names$ -- 24
-pop$ -- 95
+Warning--empty journal in hartland2006multi
+You've used 32 entries,
+            2773 wiz_defined-function locations,
+            777 strings with 10485 characters,
+and the built_in function-call counts, 16349 in all, are:
+= -- 1533
+> -- 829
+< -- 27
++ -- 286
+- -- 252
+* -- 1276
+:= -- 2361
+add.period$ -- 102
+call.type$ -- 32
+change.case$ -- 179
+chr.to.int$ -- 30
+cite$ -- 70
+duplicate$ -- 778
+empty$ -- 1392
+format.name$ -- 296
+if$ -- 3547
+int.to.chr$ -- 3
+int.to.str$ -- 1
+missing$ -- 30
+newline$ -- 165
+num.names$ -- 120
+pop$ -- 388
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 147
 quote$ -- 0
-skip$ -- 207
+skip$ -- 611
 stack$ -- 0
-substring$ -- 623
-swap$ -- 131
-text.length$ -- 11
+substring$ -- 802
+swap$ -- 150
+text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 1
-while$ -- 79
-width$ -- 28
-write$ -- 286
-(There were 4 error messages)
+type$ -- 352
+warning$ -- 4
+while$ -- 154
+width$ -- 0
+write$ -- 419
+(There were 5 warnings)

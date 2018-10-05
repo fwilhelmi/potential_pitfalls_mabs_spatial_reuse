@@ -1,0 +1,313 @@
+% Copyright Javier SÃ¡nchez-Monedero.
+% Please report bugs and suggestions to (jsanchezm at uco.es)
+%
+% This document is released under a Creative Commons Licence 
+% CC-BY-SA (http://creativecommons.org/licenses/by-sa/3.0/) 
+%
+% BASIC INSTRUCTIONS: 
+% 1. Load and set up proper language packages
+% 2. Complete the paper data commands
+% 3. Use commands \rcomment and \newtext as shown in the example
+
+\documentclass[a4paper,twoside,11pt]{reviewresponse}
+
+% 1. Load and set up proper language packages
+%\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\newenvironment{bottompar}{\par\vspace*{\fill}}{\clearpage}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{epstopdf}
+\usepackage{enumitem}% http://ctan.org/pkg/enumitem
+\usepackage{amsmath} % for the "align" and "align*" environments
+\usepackage{tabularx}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{soul}
+\usepackage{mathtools}
+\usepackage{epsfig}   
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+\def\Plus{\texttt{+}}
+
+% 2. Complete the paper data
+\newcommand{\myAuthors}{Francesc~Wilhelmi, Sergio~Barrachina-Mu\~noz, Boris~Bellalta, Cristina-Cano, Anders-Jonsson \& Gergely-Neu}
+\newcommand{\myAuthorsShort}{Sergio~Barrachina-Mu\~noz, Francesc~Wilhelmi, Boris~Bellalta}
+\newcommand{\myEmail}{francisco.wilhelmi@upf.edu}
+\newcommand{\myTitle}{Response Letter of "Potential and Pitfalls of Multi-Armed Bandits for Decentralized Spatial Reuse in WLANs"}
+\newcommand{\myShortTitle}{Response letter to reviewers}
+\newcommand{\myJournal}{Journal on Network and Computer Applications}
+\newcommand{\myDept}{Dept. of Information and Communication Technologies \\ Universitat Pompeu Fabra (UPF), Barcelona}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\usepackage[linktoc=all]{hyperref}
+\usepackage[linktoc=all,bookmarks,bookmarksopen=true,bookmarksnumbered=true]{hyperref}
+
+\hypersetup{
+	pdfauthor = {\myAuthorsShort},
+	pdftitle = {\myTitle},
+	pdfsubject = {\myJournal\xspace},
+	colorlinks = true,
+	linkcolor=black!70!green,       % color of internal links
+	citecolor=black!70!green,       % color of links to bibliography
+	filecolor=magenta,      		% color of file links
+	urlcolor=black!70!green           % color of external links
+}
+
+\newcommand{\cc}[1]{\textcolor{purple}{#1}}
+
+\begin{document}
+	
+	\thispagestyle{plain}
+	
+	\begin{center}
+		{\LARGE\myTitle} \vspace{0.5cm} \\
+		{\large\myJournal} \vspace{0.5cm} \\
+		\myAuthors \\
+		\url{\myEmail} \vspace{0.3cm} \\
+		\myDept
+	\end{center}
+	
+	\medskip
+	
+	\medskip
+	
+	This manuscript is a revised version of the manuscript with id JNCA-D-18-00769. We would like to thank the reviewers for their comments, which have allowed us to improve our submission, as well as the editor for allowing us to revise our work for publication in this journal. We have performed a thorough revision of the paper to address all the concerns raised by the reviewers. In this letter we address the comments from the reviewers and point out the changes in the revised version of our manuscript (which are highlighted in \textcolor{blue}{blue} to facilitate revision). In addition, we improved some parts regarding writing and readability (highlighted in \textcolor{orange}{orange}). Before providing the specific response to each one of the reviewers’ comments, we next summarize the main changes introduced in the new version of the paper:
+    
+    \begin{itemize}
+        \item We have now further motivated the utilization of Multi-Armed Bandits (MABs) to address the decentralized Spatial Reuse (SR) problem in IEEE 802.11 Wireless Local Area Networks (WLANs).
+        \item We have provided some parallelisms between the considerations of learning in a decentralized way and the algorithms proposed in this paper.
+        \item We elaborated a new subsection in which we provide some insights on learning in dynamic environments.
+        \item We have analyzed the performance of Thompson sampling in front of the well-known and popular action-selection strategy $\varepsilon$-greedy.
+        \item Some notes are given in the conclusions with regard to the feasibility and potential of including beamforming to the SR problem.
+        \item We corrected spelling and other writing errors.
+        \item We reprocessed some parts of the text with the aim of facilitating its readability. 
+    \end{itemize}
+    
+    We hope the changes made in the revised version of this manuscript provide a clarification on the issues previously raised.  
+    
+    With best regards,
+    
+    %Francesc Wilhelmi, Sergio Barrachina-Muñoz, Boris Bellalta, Cristina Cano, Anders Jonsson and Gergely Neu.
+
+	\begin{bottompar}
+		\begin{flushright}
+			Francesc~Wilhelmi, Sergio~Barrachina-Mu\~noz, Boris~Bellalta, Cristina-Cano, Anders-Jonsson \& Gergely-Neu\\
+			Barcelona (Spain), \today
+		\end{flushright}
+	\end{bottompar}
+	
+	
+%	\tableofcontents
+%	\newpage
+	
+	\section{Reviewer \#1}
+	
+	%%%%%%%%%%%%%%%%
+	% Comment R1.1
+	%%%%%%%%%%%%%%%%
+	\rcomment{
+		Real-life scenarios are dynamic. This problem is, in my opinion, only vaguely tackled in the paper. Some details about how the proposed algorithms may tackle this problem, including their limitations in this context are needed. 
+		\label{com:1_1}
+	}
+	
+	\textbf{Response.} We strongly agree with this statement, and concur that considering network dynamics is essential in order to assess the actual performance that can be achieved when applying Reinforcement Learning (RL) to wireless networks. We added Subsection \textit{4.2.3. Learning in Dynamic WLANs} to the manuscript, with the aim of shedding some light to the matter. This subsection provides a description on how dynamic scenarios can be addressed. In addition, a use case of a dynamic scenario is presented, in which the performance of the proposed algorithm is shown.
+	
+	We hope that this new contribution encourages other researchers to delve into the topic. In particular, we left as future work the thorough analysis of applying learning in dynamic environments. To that purpose, a preliminary and fundamental requirement consists in  exhaustively analyzing the performance of dynamic scenarios with multiple overlapping WLANs. Analyzing the throughput experienced in those environments would allow us to better understand the dynamics of the rewards.
+	
+	%%%%%%%%%%%%%%%%
+	% Comment R1.2
+	%%%%%%%%%%%%%%%%
+	\rcomment{
+		The authors suggest that the proposed algorithms may be used inside a decentralized mechanism. The authors discuss this issue in subsection 4.2 but this discussion is general (not related to the two new algorithms). They must be more precise in the case of the two algorithms (by adding a small paragraph inside 4.2 to address this issue).
+		\label{com:1_2}
+	}
+	
+	\textbf{Response.} We modified Subsection \textit{4.2. Considerations of Decentralized Learning in WLANs} to link the current explanations with the two proposed algorithms. In particular, we discuss the implications of applying each algorithm to decentralized scenarios. Such a discussion is later extended in the results section \textit{5. Performance Evaluation}.
+	
+	%%%%%%%%%%%%%%%%
+	% Comment R1.3
+	%%%%%%%%%%%%%%%%
+	\rcomment{
+		WLAN range used in simulation seems unrealistic. In some figures the WLAN range seems to be less than 6-7m (see Fig. 7 a for example).
+		\label{com:1_3}
+	}
+	
+	\textbf{Response.} We agree on the fact that the propagation losses may seem to be very strong. However, we took as reference the residential scenario recommended in the IEEE 802.11ax amendment (\cite{merlin2015tgax}), and which can be found in \href{https://mentor.ieee.org/802.11/dcn/14/11-14-0980-16-00ax-simulation-scenarios.docx}{11-14-0980 TGax Simulation Scenarios}. Such a scenario frames a residential building with strong path-loss effects due to the high number of obstacles in terms of walls and floors. In particular, since we refer to random scenarios, we did not reproduce the exact scenario provided by the 11ax standard. Instead, we have captured its essence by proposing a model that takes into account the walls and floor frequencies, rather than the actual location of walls and floors. The formula that we have used for the incurred loss of a given data transmission, which appears in the manuscript's appendix, is:
+	\begin{align}
+	\text{PL}_d = 40.05 + 20 \log_{10}\Big(\frac{f_c}{2.4}\Big) + 20 \log_{10}(\min(d,5)) + \nonumber I_{d>5} \cdot 35\log_{10}\Big(\frac{d}{5}\Big) + 18.3 F^{\frac{F+2}{F+1}-0.46} + 5W,
+	\nonumber
+    \end{align}
+    where $f_c$ is the central frequency in GHz, $d$ is the distance between the transmitter and the receiver in meters, and $F$ and $W$ are the average number of floors and walls traversed per meter, respectively. Note that $F$ and $W$ have been obtained from the actual number of walls and floors of the 11ax residential scenario. In particular, the scenario has the following characteristics:
+    \begin{itemize}
+        \item 5 floors, 3 m height in each floor
+        \item 2x10 apartments in each floor
+        \item Apartment size: 10m x 10m x 3m
+    \end{itemize}
+    
+    With the aim of clarifying this point to the reader, we added further details on the path-loss model in Appendix \textit{A. Wireless Environment}.  
+	%%%%%%%%%%%%%%%%
+	% Comment R1.4
+	%%%%%%%%%%%%%%%%
+	\rcomment{
+		The abbreviations AP and STA are not defined the first time they appear in the text.
+		\label{com:1_4}
+	}
+	
+	\textbf{Response.} We have corrected this in the manuscript, as indicated by Reviewer #1. 
+	
+	%%%%%%%%%%%%%%%%
+	% Comment R1.5
+	%%%%%%%%%%%%%%%%
+	\rcomment{
+		There are few typos and incorrectly shaped sentences. For example in the middle of page 13 we have the following incorrect sentence "Furthermore, due to the lack of coordination between WLANs, the abovementioned learning procedure would done in a disorganized way." and also, in the following sentence ("Accordingly, from a global network perspective …"), it is written "them" instead of "they".
+		\label{com:1_5}
+	}
+	
+	\textbf{Response.} We have performed a throughout revision of the article, following this comment from Reviewer #1.
+	
+	%%%%%%%%%%%%%%%%
+	% Comment R1.6
+	%%%%%%%%%%%%%%%%
+	\rcomment{
+		The legend of Fig.10b must be moved outside the figure.
+		\label{com:1_6}
+	}
+	
+	\textbf{Response.} We have corrected this in the manuscript, as indicated by Reviewer #1.
+	
+	%%%%%%%%%%%%%%%%
+	% Comment R1.7
+	%%%%%%%%%%%%%%%%
+	\rcomment{
+		On page 25, inside subsection 5.2 it is written: "WLANs are uniformly distributed at random in the scenario…", which is unclear. Probably it should be "WLANs are uniformly randomly distributed in the scenario…", Please rectify.
+		\label{com:1_7}
+	}
+	
+	\textbf{Response. } We have corrected this in the manuscript, as indicated by Reviewer #1.
+	
+	\section{Reviewer \#2}
+	
+	%%%%%%%%%%%%%%%%
+	% Comment R2.1
+	%%%%%%%%%%%%%%%%
+	
+	\rcomment{
+		The authors should provide more justification for using MABs to address the SR problem.
+		\label{com:2_1}
+	}
+	
+	\textbf{Response.} We further justified the utilization of MABs for the decentralized SR problem at the beginning of Section \textit{4. Multi-Armed Bandits for Decentralized Spatial Reuse}. In particular, we show that MABs have been previously used to address the exploration-exploitation trade-off, for scenarios with a high degree of uncertainty. In addition, we find parallelisms between scenarios with uncertainty and the decentralized SR problem.
+	
+	%%%%%%%%%%%%%%%%
+	% Comment R2.2
+	%%%%%%%%%%%%%%%%
+	\rcomment{
+		The theoretical data rate provided by the maximum MCS is not clear and unjustified.
+		\label{com:2_2}
+	}
+	
+	\textbf{Response.} We added additional information to footnote 9 in Subsection \textit{4.2.1 Reward Definition}. However, we would also like to provide further details in this response letter. 
+	
+	In this regard, we have provided the data rate corresponding to the maximum MCS permitted by the IEEE 802.11ax for single transmissions. Accordingly, such a data rate is obtained from the necessary time to carry out the entire transmission, including overheads, which can be obtained by emulating the operation of the Distributed Coordination Function (DCF). We have clarified this point in the manuscript. 
+	
+	In particular, the data rate of a given data transmission is obtained as follows:
+	\begin{equation}
+	    C = \frac{1}{T_{\text{RTS}} + \text{SIFS} + T_{\text{CTS}} + \text{SIFS} + T_{\text{DATA}} + \text{SIFS} + T_{\text{BACK}} + \text{DIFS} + T_e}, 
+	\end{equation}
+	
+	All the parameters are collected in manuscript's Table A.3, located at the \textit{Appendix A. Wireless Environment}. For clarification purposes, below we show the parameters used for data transmissions (Table \ref{tbl:simulation_parameters}).
+	
+	\begin{table*}[h!]
+    	\centering
+    	\resizebox{\textwidth}{!}{\begin{tabular}{|l|l|l|}
+    		\hline
+    		\textbf{Parameter} & \textbf{Description} & \textbf{Value} \\ \hline
+    	    $T_s$ & Symbol duration & 9 $\mu$s \\ \hline
+    		DIFS/SIFS & DIFS and SIFS duration & 34 $\mu$s / 16 $\mu$s \\ \hline
+    		$N_{agg}$ & Number of packets aggregated & 64 \\ \hline
+    		$L_{\text{DATA}}$ & Length of a data packet & 12000 bits \\ \hline
+    		$L_{\text{RTS}}$ / $L_{\text{CTS}}$ & Length RTS and CTS packets & 160 bits / 112 bits \\ \hline
+    		$L_{\text{MAC}}$ & Length MAC header & 272 bits \\ \hline
+    		$L_{\text{SF}}$ & Length Service Field (SF) & 16 bits \\ \hline
+    		$L_{\text{MPDU}}$ & MPDU delimiter & 32 bits \\ \hline
+    		$L_{\text{Tail}}$ & Length tail & 6 bits \\ \hline
+    		$L_{\text{BACK}}$ & Length block ACK & 240 bits \\ \hline	
+    		$T_{\text{RTS}}$ & RTS packet duration & $20\cdot 10^{-6} + \frac{L_{\text{SF}}+L_{\text{RTS}}+L_{\text{Tail}}}{R}T_s$ s\\ \hline	
+    		$T_{\text{CTS}}$ & CTS packet duration & $20\cdot 10^{-6} + \frac{L_{\text{SF}}+L_{\text{CTS}}+L_{\text{Tail}}}{R}T_s$ s \\ \hline	
+    		$T_{\text{DATA}}$ & Data packet duration & $36\cdot 10^{-6} + \text{SUSS} \cdot 16 \cdot 10^{-6} + \frac{(L_{\text{SF}}+N_{agg}\cdot(304+L_{\text{DATA}})+L_{Tail})}{R}T_s$ s \\ \hline	
+    		$T_{\text{BACK}}$ & Block ACK duration & $20 \cdot 10^{-6} + \frac{L_{\text{SF}}+L_{\text{BACK}}+L_{\text{Tail}}}{R}T_s $ s\\ \hline	
+    	\end{tabular}}
+    	\caption{Simulation parameters}
+    	\label{tbl:simulation_parameters}
+    \end{table*}
+
+	%%%%%%%%%%%%%%%%
+	% Comment R2.3
+	%%%%%%%%%%%%%%%%
+	\rcomment{
+		The authors should compare MABs to other methods such as PID controller to maximize the reward function.
+		\label{com:2_3}
+	}
+	
+	We appreciate the comment of the reviewer since it proposes another interesting approach for modeling the problem. 
+	
+	%To the best of our knowledge
+	A PID controller is mostly used in industry to solve linear problems by continuously calculating an error function and providing actions based on predictions. In particular, a PID controller relies on three components, which are aimed to control the generated error. The output of the PID controller is generated as follows:
+	\begin{equation}
+	    u(t) =  K_p P + K_i I + K_d D = K_p e(t) + K_i \int_{0}^{t} e(\tau) d \tau + K_d \frac{d e(t)}{dt},
+	\end{equation}
+	where $K_p$, $K_i$ and $K_d$ are the coefficients provided to each component.
+
+	With regards to the decentralized SR problem presented in this work, we have thought about how it could be modelled by means of a PID controller:
+	\begin{itemize}
+	    \item The experienced throughput is the Process Variable (PV).
+        \item The desired throughput is the Set Point (SP), which in our work is referred to as optimal reward.
+        \item Therefore, the error function refers to the regret, which is the difference between SP and PV.
+        \item Finally, the selected action in terms of frequency channel, transmit power and sensitivity threshold is the output $u(t)$ from the PID controller in time $t$.
+	\end{itemize}
+	
+    However, as shown by definition, the desired output for our system refers to \cc{a} non-linear combination of independent parameters that impact on the error function. Moreover, the last term of the PID controller, meant for predicting the error, may not be used in our case, since the error function depends on an unknown environment.
+    
+    We do believe, as highlighted by the reviewer, that comparison with other methods is important. So, we have provided additional results to Subsection \textit{5.1. Selfish vs Environment-Aware Learning}, where the $\varepsilon$-greedy method has been executed for the same scenarios. We hope that this improvement helps at justifying the election of Thompson sampling instead of other learning-based methods. We also refer the reader to \cite{wilhelmi2017collaborative}, where we compared several methods for the decentralized SR problem in WLANs.
+
+	%%%%%%%%%%%%%%%%
+	% Comment R2.4
+	%%%%%%%%%%%%%%%%
+	\rcomment{
+		MIMO techniques such as adaptable beamforming and beam tracking (to increase coverage and minimize interference) in the range of actions (A) and their impact should be included.
+		\label{com:2_4}
+	}
+	
+	\textbf{Response.} We strongly agree that techniques such as MIMO and beamforming would significantly contribute to the interference minimization problem. Our framework can be extended to incorporate these techniques, however substantial work is needed. Accordingly, we have modified Section \textit{6. Conclusions} to provide a description on how our work could be extended to account for this.
+	
+	In addition, we would like to introduce here a short description on the matter. On the one hand, we think that we could apply the same mechanisms as presented in the paper if we could assume that both MIMO and beamforming allow to relax the problem in a similar way than using several non-overlapping frequency channels. On the other hand, when referring to dynamic scenarios in which there are more STAs per WLAN, the application of MIMO and beamforming is expected to have stronger implications on the SR operation. In particular, much more complex interactions between devices may generate situations that require a more detailed examination. For instance, in case of applying beamforming, a different interference model would be generated than for the case of omnidirectional transmissions. Therefore, the number of overlapping WLANs may vary, thus impacting on their interactions. As a result, tuning both the transmit power and the sensitivity may have significantly different implications than for the default case. It is crucial, then, to properly understand these new interactions before providing a decentralized SR learning-based solution.
+	
+	Continuing with the beamforming issue, we envision a potential SR solution on a per beam basis, rather than on a per network basis. The fact of using different beams for each associated STA motivates such an assumption.
+
+	%%%%%%%%%%%%%%%%
+	% Comment R2.5
+	%%%%%%%%%%%%%%%%
+	\rcomment{
+	    Mobility of STAs should be included.
+	    \label{com:2_5}
+	}
+
+	\textbf{Response.} We completely agree with this, and, since both Reviewers #1 and #2 addressed the same issue, we highly increase our interest to the matter. We want to refer to the Response granted to Comment R1.1 to address Comment R2.5.
+	
+	We would like to point out that it is interesting to study whether the provided learning mechanisms are fast enough to maximize the performance of WLANs during \emph{i)} stationary periods (i.e., when the network remains relatively stable), and \emph{ii)} the transitory regimes (i.e., after a change in the environment occurred). Of course, such an analysis strongly depends on the average time that networks remain static. It is worth to mention that domestic Wi-Fi networks (which are mostly targeted in this work), remain stable for large periods.
+	
+	\clearpage
+	
+	% BIBLIOGRAPHY
+	% Uncomment in case references are needed
+	\bibliographystyle{apalike}
+	\bibliography{bib}
+	
+\end{document}
