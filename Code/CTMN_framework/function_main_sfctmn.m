@@ -46,15 +46,6 @@ function [throughput, powerRxStationFromAp, powerRxApFromAp, SINR_cell] = functi
     % Determine the number of WLANs
     num_wlans = size(wlans, 2);
     wlans_aux = wlans;
-%     if flag_activation
-%         num_wlans_initial = num_wlans;   
-%         for i = 1 : num_wlans
-%             if ~wlans(i).activated && wlans(i).activation_iteration > 0
-%                 wlans_aux(i) = [];
-%                 num_wlans = num_wlans - 1;
-%             end
-%         end
-%     end
     
     % Check input correctness
     if flag_input_checker
@@ -107,22 +98,6 @@ function [throughput, powerRxStationFromAp, powerRxApFromAp, SINR_cell] = functi
     [ Power_AP_PSI_cell, Power_STA_PSI_cell, SINR_cell] = compute_sensed_power(wlans_aux, num_global_states, PSI_cell, path_loss_model, ...
         carrier_frequency, flag_general_logs, powerRxStationFromAp, distance_ap_ap, distance_ap_sta, nChannels);
     display_with_flag([LOG_LVL2 'Sensed power computed!'], flag_general_logs)    
-    disp('Power_AP_PSI_cell')
-    Power_AP_PSI_cell{1}
-    Power_AP_PSI_cell{2}
-    Power_AP_PSI_cell{3}
-%     Power_AP_PSI_cell{4}
-    disp('Power_STA_PSI_cell')
-    Power_STA_PSI_cell{1}
-    Power_STA_PSI_cell{2}
-    Power_STA_PSI_cell{3}
-%     Power_STA_PSI_cell{4}
-%     
-    disp('SINR_cell')
-    SINR_cell{1}
-    SINR_cell{2}
-    SINR_cell{3}
-%     SINR_cell{4}
     
     %% FEASIBLE STATES SPACE (S)
     % Identify feasible states space (S) according to spatial and spectrum requirements.
@@ -165,26 +140,10 @@ function [throughput, powerRxStationFromAp, powerRxApFromAp, SINR_cell] = functi
     % get_throughput now per states
     throughput = get_throughput(wlans_aux, num_wlans, p_equilibrium, S_cell, ...
         PSI_cell, SINR_cell, mcs_per_wlan, powerRxStationFromAp); 
-%     throughput_wlans_aux = get_throughput(wlans_aux, num_wlans, p_equilibrium, S_cell, ...
-%         PSI_cell, SINR_cell, mcs_per_wlan, powerRxStationFromAp); 
-%     if flag_activation
-%         throughput = zeros(1, num_wlans_initial);
-%         k = 1;
-%         for i = 1 : num_wlans_initial
-%             if ~wlans_aux(i).activated        
-%                 throughput(i) = 0;
-%             else
-%                 throughput(i) = throughput_wlans_aux(k);
-%                 k = k + 1;
-%             end
-%         end
-%     else
-%         throughput = throughput_wlans_aux;
-%     end
+
     proportional_fairness = sum(log(throughput));
     display_with_flag([LOG_LVL2 'Trhoughput computed!'], flag_general_logs)
-        
-     
+             
     %% Save results
     if flag_save_results    
         disp('--------------------------------------------------------')

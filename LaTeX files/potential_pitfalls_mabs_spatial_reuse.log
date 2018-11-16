@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  5 OCT 2018 07:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  16 NOV 2018 08:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1117,28 +1117,27 @@ Package: appendix 2009/09/02 v1.2b extra appendix facilities
 (./potential_pitfalls_mabs_spatial_reuse.aux)
 \openout1 = `potential_pitfalls_mabs_spatial_reuse.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 112.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 112.
-
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 97.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 97.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
 
 (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1166,7 +1165,7 @@ Dictionary: translator-basic-dictionary, Language: English
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 )
 \AtBeginShipoutBox=\box71
-Package hyperref Info: Link coloring OFF on input line 112.
+Package hyperref Info: Link coloring OFF on input line 97.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -1175,21 +1174,21 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count325
 )
-LaTeX Info: Redefining \ref on input line 112.
-LaTeX Info: Redefining \pageref on input line 112.
-LaTeX Info: Redefining \nameref on input line 112.
+LaTeX Info: Redefining \ref on input line 97.
+LaTeX Info: Redefining \pageref on input line 97.
+LaTeX Info: Redefining \nameref on input line 97.
 
 (./potential_pitfalls_mabs_spatial_reuse.out)
 (./potential_pitfalls_mabs_spatial_reuse.out)
 \@outlinefile=\write5
 \openout5 = `potential_pitfalls_mabs_spatial_reuse.out'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 112.
+LaTeX Font Info:    Try loading font information for U+msa on input line 97.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 112.
+LaTeX Font Info:    Try loading font information for U+msb on input line 97.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1202,12 +1201,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <csma_a.png, id=223, 298.2342pt x 275.1078pt>
 File: csma_a.png Graphic file (type png)
 <use csma_a.png>
-Package pdftex.def Info: csma_a.png  used on input line 235.
+Package pdftex.def Info: csma_a.png  used on input line 193.
 (pdftex.def)             Requested size: 117.43875pt x 108.33266pt.
 <csma_b.png, id=225, 644.6484pt x 325.215pt>
 File: csma_b.png Graphic file (type png)
 <use csma_b.png>
-Package pdftex.def Info: csma_b.png  used on input line 240.
+Package pdftex.def Info: csma_b.png  used on input line 198.
 (pdftex.def)             Requested size: 258.36668pt x 130.34174pt.
 
 
@@ -1217,17 +1216,17 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <three_wlans_ctmn_a.png, id=240, 423.984pt x 317.5062pt>
 File: three_wlans_ctmn_a.png Graphic file (type png)
 <use three_wlans_ctmn_a.png>
-Package pdftex.def Info: three_wlans_ctmn_a.png  used on input line 294.
+Package pdftex.def Info: three_wlans_ctmn_a.png  used on input line 222.
 (pdftex.def)             Requested size: 164.41711pt x 123.12926pt.
 
-Underfull \hbox (badness 7326) in paragraph at lines 295--295
+Underfull \hbox (badness 7326) in paragraph at lines 223--223
 []\OT1/cmr/m/n/10.95 (a) |Sce-nario with over-lap-ping
  []
 
 <three_wlans_ctmn_b.png, id=241, 887.4756pt x 448.074pt>
 File: three_wlans_ctmn_b.png Graphic file (type png)
 <use three_wlans_ctmn_b.png>
-Package pdftex.def Info: three_wlans_ctmn_b.png  used on input line 299.
+Package pdftex.def Info: three_wlans_ctmn_b.png  used on input line 227.
 (pdftex.def)             Requested size: 234.8775pt x 118.58179pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1237,37 +1236,37 @@ ctmn_b.png>]
 <s1_interactions.png, id=274, 342.078pt x 249.0906pt>
 File: s1_interactions.png Graphic file (type png)
 <use s1_interactions.png>
-Package pdftex.def Info: s1_interactions.png  used on input line 337.
+Package pdftex.def Info: s1_interactions.png  used on input line 262.
 (pdftex.def)             Requested size: 131.53418pt x 95.78044pt.
 <s2_interactions.png, id=275, 430.7292pt x 246.1998pt>
 File: s2_interactions.png Graphic file (type png)
 <use s2_interactions.png>
-Package pdftex.def Info: s2_interactions.png  used on input line 342.
+Package pdftex.def Info: s2_interactions.png  used on input line 267.
 (pdftex.def)             Requested size: 164.41711pt x 93.97763pt.
 <s3_interactions.png, id=276, 361.35pt x 389.7762pt>
 File: s3_interactions.png Graphic file (type png)
 <use s3_interactions.png>
-Package pdftex.def Info: s3_interactions.png  used on input line 349.
+Package pdftex.def Info: s3_interactions.png  used on input line 274.
 (pdftex.def)             Requested size: 140.92793pt x 152.0121pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 347--352
+Underfull \hbox (badness 10000) in paragraph at lines 272--277
 
  []
 
 <table_confs.pdf, id=277, 963.6pt x 273.02pt>
 File: table_confs.pdf Graphic file (type pdf)
 <use table_confs.pdf>
-Package pdftex.def Info: table_confs.pdf  used on input line 355.
+Package pdftex.def Info: table_confs.pdf  used on input line 280.
 (pdftex.def)             Requested size: 281.85587pt x 79.85698pt.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 367.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 292.
 [10 <./s1_interactions.png> <./s2_interactions.png> <./s3_interactions.png> <./
 table_confs.pdf>] [11]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [12] [13]
-Overfull \hbox (9.93724pt too wide) in paragraph at lines 418--419
+Overfull \hbox (9.93724pt too wide) in paragraph at lines 340--341
 []\OT1/cmr/m/n/12 Figure []4[] il-lus-trates the in-clu-sion of agents into WLA
 Ns, which op-er-ate on top of CSMA/CA,
  []
@@ -1275,122 +1274,122 @@ Ns, which op-er-ate on top of CSMA/CA,
 <agents_a.png, id=357, 327.624pt x 276.0714pt>
 File: agents_a.png Graphic file (type png)
 <use agents_a.png>
-Package pdftex.def Info: agents_a.png  used on input line 424.
+Package pdftex.def Info: agents_a.png  used on input line 346.
 (pdftex.def)             Requested size: 164.41711pt x 138.54927pt.
 <agents_b.png, id=358, 661.5114pt x 301.125pt>
 File: agents_b.png Graphic file (type png)
 <use agents_b.png>
-Package pdftex.def Info: agents_b.png  used on input line 429.
+Package pdftex.def Info: agents_b.png  used on input line 351.
 (pdftex.def)             Requested size: 281.85587pt x 128.30035pt.
 [14 <./agents_a.png> <./agents_b.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 467.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 389.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 467.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 389.
  [15]pdfTeX warning (ext4): destination with the same identifier (name{equation
 .4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.491 \begin{equation}
+l.413 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.491 \begin{equation}
+l.413 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.491 \begin{equation}
+l.413 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.491 \begin{equation}
+l.413 \begin{equation}
                        [16]pdfTeX warning (ext4): destination with the same ide
 ntifier (name{equation.4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.507 \begin{equation}
+l.429 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.507 \begin{equation}
+l.429 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.507 \begin{equation}
+l.429 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.507 \begin{equation}
+l.429 \begin{equation}
                        [17] [18] [19]
 <s1_new.png, id=439, 318.4698pt x 320.8788pt>
 File: s1_new.png Graphic file (type png)
 <use s1_new.png>
-Package pdftex.def Info: s1_new.png  used on input line 544.
+Package pdftex.def Info: s1_new.png  used on input line 466.
 (pdftex.def)             Requested size: 117.43875pt x 118.32669pt.
 <approx_vs_actual_regret.pdf, id=440, 501.875pt x 351.3125pt>
 File: approx_vs_actual_regret.pdf Graphic file (type pdf)
 <use approx_vs_actual_regret.pdf>
-Package pdftex.def Info: approx_vs_actual_regret.pdf  used on input line 549.
+Package pdftex.def Info: approx_vs_actual_regret.pdf  used on input line 471.
 (pdftex.def)             Requested size: 140.92793pt x 98.65092pt.
 <approx_vs_actual_tpt.pdf, id=441, 501.875pt x 351.3125pt>
 File: approx_vs_actual_tpt.pdf Graphic file (type pdf)
 <use approx_vs_actual_tpt.pdf>
-Package pdftex.def Info: approx_vs_actual_tpt.pdf  used on input line 554.
+Package pdftex.def Info: approx_vs_actual_tpt.pdf  used on input line 476.
 (pdftex.def)             Requested size: 140.92793pt x 98.65092pt.
  [20 <./s1_new.png> <./approx_vs_actual_regret.pdf> <./approx_vs_actual_tpt.pdf
 >]
 <s2_new.png, id=461, 403.7484pt x 320.397pt>
 File: s2_new.png Graphic file (type png)
 <use s2_new.png>
-Package pdftex.def Info: s2_new.png  used on input line 576.
+Package pdftex.def Info: s2_new.png  used on input line 498.
 (pdftex.def)             Requested size: 164.41711pt x 130.47385pt.
 <clustering_benefits.pdf, id=462, 501.875pt x 351.3125pt>
 File: clustering_benefits.pdf Graphic file (type pdf)
 <use clustering_benefits.pdf>
-Package pdftex.def Info: clustering_benefits.pdf  used on input line 581.
+Package pdftex.def Info: clustering_benefits.pdf  used on input line 503.
 (pdftex.def)             Requested size: 187.89914pt x 131.53279pt.
  [21 <./s2_new.png> <./clustering_benefits.pdf>]
 <s3_new.png, id=478, 423.0204pt x 324.2514pt>
 File: s3_new.png Graphic file (type png)
 <use s3_new.png>
-Package pdftex.def Info: s3_new.png  used on input line 596.
+Package pdftex.def Info: s3_new.png  used on input line 518.
 (pdftex.def)             Requested size: 164.41711pt x 126.02708pt.
 <clustering_additive_interference.pdf, id=479, 501.875pt x 351.3125pt>
 File: clustering_additive_interference.pdf Graphic file (type pdf)
 <use clustering_additive_interference.pdf>
 Package pdftex.def Info: clustering_additive_interference.pdf  used on input li
-ne 601.
+ne 523.
 (pdftex.def)             Requested size: 187.89914pt x 131.53279pt.
  [22 <./s3_new.png> <./clustering_additive_interference.pdf>]
-<max_min_tpt_1_4.png, id=494, 501.875pt x 351.3125pt>
+<max_min_tpt_1_4.png, id=494, 501.91515pt x 351.35265pt>
 File: max_min_tpt_1_4.png Graphic file (type png)
 <use max_min_tpt_1_4.png>
-Package pdftex.def Info: max_min_tpt_1_4.png  used on input line 623.
-(pdftex.def)             Requested size: 187.89914pt x 131.53279pt.
+Package pdftex.def Info: max_min_tpt_1_4.png  used on input line 542.
+(pdftex.def)             Requested size: 187.89914pt x 131.53174pt.
  [23 <./max_min_tpt_1_4.png (PNG copy)>]
 File: s1_new.png Graphic file (type png)
 <use s1_new.png>
-Package pdftex.def Info: s1_new.png  used on input line 663.
+Package pdftex.def Info: s1_new.png  used on input line 580.
 (pdftex.def)             Requested size: 122.13371pt x 123.05643pt.
 <fig_2_1_fairness.png, id=513, 496.85625pt x 395.43735pt>
 File: fig_2_1_fairness.png Graphic file (type png)
 <use fig_2_1_fairness.png>
-Package pdftex.def Info: fig_2_1_fairness.png  used on input line 669.
+Package pdftex.def Info: fig_2_1_fairness.png  used on input line 586.
 (pdftex.def)             Requested size: 169.11209pt x 134.59172pt.
 <experiment_2_1_variability.png, id=514, 501.91515pt x 351.35265pt>
 File: experiment_2_1_variability.png Graphic file (type png)
 <use experiment_2_1_variability.png>
-Package pdftex.def Info: experiment_2_1_variability.png  used on input line 673
+Package pdftex.def Info: experiment_2_1_variability.png  used on input line 590
 .
 (pdftex.def)             Requested size: 169.11209pt x 118.3807pt.
 
@@ -1401,17 +1400,17 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <s5_new.png, id=526, 361.35pt x 389.7762pt>
 File: s5_new.png Graphic file (type png)
 <use s5_new.png>
-Package pdftex.def Info: s5_new.png  used on input line 696.
+Package pdftex.def Info: s5_new.png  used on input line 613.
 (pdftex.def)             Requested size: 122.13371pt x 131.74303pt.
 <fig_2_2_potential.png, id=527, 501.91515pt x 351.35265pt>
 File: fig_2_2_potential.png Graphic file (type png)
 <use fig_2_2_potential.png>
-Package pdftex.def Info: fig_2_2_potential.png  used on input line 701.
+Package pdftex.def Info: fig_2_2_potential.png  used on input line 618.
 (pdftex.def)             Requested size: 169.11209pt x 118.3807pt.
 <experiment_2_2_variability.png, id=528, 501.91515pt x 351.35265pt>
 File: experiment_2_2_variability.png Graphic file (type png)
 <use experiment_2_2_variability.png>
-Package pdftex.def Info: experiment_2_2_variability.png  used on input line 706
+Package pdftex.def Info: experiment_2_2_variability.png  used on input line 623
 .
 (pdftex.def)             Requested size: 169.11209pt x 118.3807pt.
 
@@ -1423,17 +1422,17 @@ copy)>]
 <s6_new.png, id=540, 421.0932pt x 490.9542pt>
 File: s6_new.png Graphic file (type png)
 <use s6_new.png>
-Package pdftex.def Info: s6_new.png  used on input line 727.
+Package pdftex.def Info: s6_new.png  used on input line 644.
 (pdftex.def)             Requested size: 140.92793pt x 164.30772pt.
 <fig_2_3_adversarial.png, id=541, 664.52264pt x 351.35265pt>
 File: fig_2_3_adversarial.png Graphic file (type png)
 <use fig_2_3_adversarial.png>
-Package pdftex.def Info: fig_2_3_adversarial.png  used on input line 732.
+Package pdftex.def Info: fig_2_3_adversarial.png  used on input line 649.
 (pdftex.def)             Requested size: 225.4804pt x 119.21706pt.
 <experiment_2_3_variability.png, id=542, 501.91515pt x 351.35265pt>
 File: experiment_2_3_variability.png Graphic file (type png)
 <use experiment_2_3_variability.png>
-Package pdftex.def Info: experiment_2_3_variability.png  used on input line 737
+Package pdftex.def Info: experiment_2_3_variability.png  used on input line 654
 .
 (pdftex.def)             Requested size: 169.11209pt x 118.3807pt.
 
@@ -1446,20 +1445,20 @@ bility.png (PNG copy)>] [27 <./s6_new.png> <./fig_2_3_adversarial.png (PNG copy
 <scalability_mean_tpt.pdf, id=560, 501.875pt x 351.3125pt>
 File: scalability_mean_tpt.pdf Graphic file (type pdf)
 <use scalability_mean_tpt.pdf>
-Package pdftex.def Info: scalability_mean_tpt.pdf  used on input line 766.
+Package pdftex.def Info: scalability_mean_tpt.pdf  used on input line 683.
 (pdftex.def)             Requested size: 140.92793pt x 98.65092pt.
 <scalability_mean_maxmin.pdf, id=561, 501.875pt x 351.3125pt>
 File: scalability_mean_maxmin.pdf Graphic file (type pdf)
 <use scalability_mean_maxmin.pdf>
-Package pdftex.def Info: scalability_mean_maxmin.pdf  used on input line 771.
+Package pdftex.def Info: scalability_mean_maxmin.pdf  used on input line 688.
 (pdftex.def)             Requested size: 140.92793pt x 98.65092pt.
 <scalability_mean_jfi.pdf, id=562, 501.875pt x 351.3125pt>
 File: scalability_mean_jfi.pdf Graphic file (type pdf)
 <use scalability_mean_jfi.pdf>
-Package pdftex.def Info: scalability_mean_jfi.pdf  used on input line 776.
+Package pdftex.def Info: scalability_mean_jfi.pdf  used on input line 693.
 (pdftex.def)             Requested size: 140.92793pt x 98.65092pt.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 780.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 697.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1470,16 +1469,16 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: scalability_selfish_learning_iterations.pdf Graphic file (type pdf)
 <use scalability_selfish_learning_iterations.pdf>
 Package pdftex.def Info: scalability_selfish_learning_iterations.pdf  used on i
-nput line 792.
+nput line 709.
 (pdftex.def)             Requested size: 187.89914pt x 105.56073pt.
 <scalability_informed_learning_iterations.pdf, id=574, 626.34pt x 351.3125pt>
 File: scalability_informed_learning_iterations.pdf Graphic file (type pdf)
 <use scalability_informed_learning_iterations.pdf>
 Package pdftex.def Info: scalability_informed_learning_iterations.pdf  used on 
-input line 797.
+input line 714.
 (pdftex.def)             Requested size: 187.89914pt x 105.38919pt.
 
-Overfull \hbox (2.21648pt too wide) in paragraph at lines 805--806
+Overfull \hbox (2.21648pt too wide) in paragraph at lines 722--723
 \OT1/cmr/m/n/12 aware learn-ing, a greater en-hance-ment is pro-vided when den-
 sity is low (two and four WLANs).
  []
@@ -1487,7 +1486,7 @@ sity is low (two and four WLANs).
 [29 <./scalability_mean_tpt.pdf> <./scalability_mean_maxmin.pdf> <./scalability
 _mean_jfi.pdf> <./scalability_selfish_learning_iterations.pdf> <./scalability_i
 nformed_learning_iterations.pdf>] [30]
-Overfull \hbox (10.68814pt too wide) detected at line 839
+Overfull \hbox (10.68814pt too wide) detected at line 756
 []
  []
 
@@ -1495,22 +1494,22 @@ Overfull \hbox (10.68814pt too wide) detected at line 839
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [31] (./potential_pitfalls_mabs_spatial_reuse.bbl [32] [33])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 918.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 807.
  [34]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 918.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 807.
 
 (./potential_pitfalls_mabs_spatial_reuse.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 918.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 918.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 807.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 807.
 Package rerunfilecheck Info: File `potential_pitfalls_mabs_spatial_reuse.out' h
 as not changed.
 (rerunfilecheck)             Checksum: 9CB734078AC80D6DB7A3DBE3678E9E2D;1690.
  ) 
 Here is how much of TeX's memory you used:
- 23445 strings out of 492649
- 434877 string characters out of 6129622
- 518061 words of memory out of 5000000
- 26848 multiletter control sequences out of 15000+600000
+ 23442 strings out of 492649
+ 434858 string characters out of 6129622
+ 517944 words of memory out of 5000000
+ 26845 multiletter control sequences out of 15000+600000
  545467 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  53i,19n,92p,10407b,858s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1540,7 +1539,7 @@ dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2018/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2018/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2018/texmf-dist
 /fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on potential_pitfalls_mabs_spatial_reuse.pdf (34 pages, 3147326 
+Output written on potential_pitfalls_mabs_spatial_reuse.pdf (34 pages, 3453467 
 bytes).
 PDF statistics:
  743 PDF objects out of 1000 (max. 8388607)

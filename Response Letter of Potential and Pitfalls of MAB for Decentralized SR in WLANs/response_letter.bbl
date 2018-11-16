@@ -1,0 +1,16 @@
+\begin{thebibliography}{}
+
+\bibitem[Merlin et~al., 2015]{merlin2015tgax}
+Merlin, S., Barriac, G., Sampath, H., Cariou, L., Derham, T., Le~Rouzic, J.,
+  Stacey, R., Park, M., Porat, R., Jindal, N., et~al. (2015).
+\newblock Tgax simulation scenarios.
+\newblock {\em doc.: IEEE}, pages 802--11.
+
+\bibitem[Wilhelmi et~al., 2017]{wilhelmi2017collaborative}
+Wilhelmi, F., Cano, C., Neu, G., Bellalta, B., Jonsson, A., and
+  Barrachina-Mu{\~n}oz, S. (2017).
+\newblock Collaborative spatial reuse in wireless networks via selfish
+  multi-armed bandits.
+\newblock {\em arXiv preprint arXiv:1710.11403}.
+
+\end{thebibliography}
