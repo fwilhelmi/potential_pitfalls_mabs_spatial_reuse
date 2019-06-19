@@ -1,7 +1,7 @@
 # Potential and Pitfalls of Multi-Armed Bandits for Decentralized Spatial Reuse in WLANs
 ### Authors
 * [Francesc Wilhelmi](https://fwilhelmi.github.io/)
-* [Sergio Barrachina-Muñoz](https://github.com/sergiobarra)
+* [Sergio Barrachina-MuÃ±oz](https://github.com/sergiobarra)
 * [Boris Bellalta](http://www.dtic.upf.edu/~bbellalt/)
 * [Cristina Cano](http://ccanobs.github.io/)
 * [Anders Jonsson](http://www.tecn.upf.es/~jonsson/)
@@ -12,7 +12,7 @@ Spatial Reuse (SR) has recently gained attention for performance maximization in
 ### Repository description
 This repository contains the Code and the LaTeX files used for the journal article "Potential and Pitfalls of Multi-Armed Bandits for Decentralized Spatial Reuse in WLANs", which has been sent to "Journal of Network and Computer Applications".
 
-The results obtained from this work can be found in [zenodo link to be inserted here]
+The results obtained from this work can be found in [https://zenodo.org/record/1445526#.XQoymdMzau4](https://zenodo.org/record/1445526#.XQoymdMzau4)
 
 ### Running instructions
 To run the code, just
